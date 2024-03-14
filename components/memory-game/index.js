@@ -25,11 +25,11 @@ let skillsUsed = [
 ];
 let imagesUsed = [
   "jest.png",
-  "python.png",
+  "Python.png",
   "github.png",
-  "postgresql.png",
+  "PostgreSQL.png",
   "Cloudinary.png",
-  "tailwind.png",
+  "Tailwind.png",
   "HTML.png",
   "CSS.png",
   "Next.js.png",
@@ -38,7 +38,7 @@ let imagesUsed = [
   "Redux.png",
   "MongoDB.png",
   "Typescrypt.png",
-  "Javascript.png",
+  "JavaScript.png",
 ];
 
 let cardtemplate =
