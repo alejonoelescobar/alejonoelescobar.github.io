@@ -664,8 +664,30 @@ backdrop-filter: blur(90px);
   }
 }
 
-@media screen and (min-width: 601px) and (max-width: 1024px) {
+@media screen and (min-width: 1700px) {
+  html{
+    font-size: 170%;
+  }
 
+  #home .container .presentation h2 {
+    margin-top: 15%}
+
+  #aboutme {
+    padding-top: 0%;
+    height: auto;}
+  #aboutme .text-title-container {
+    margin-top: 6%;}
+
+  #projects .carrouseldirec .carrousel .big .card .description .icon-img {
+    height: 35px;}
+
+  #skills #memory-game .card {
+   width: 130px;
+   height: 130px; }
+  #skills #toggleButton {
+    font-size: 100%;
+    margin-top: 1%;
+  }
 }
 
 @media screen and (min-width: 2048px) {
