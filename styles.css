@@ -22,7 +22,6 @@ html {
   height: 100%;
   z-index: -1; /* Colocar el video detrás del contenido */
 }
-
 #background .video-container video {
   max-width: 100%;
   min-width: 100%; /* Asegurarse de que el video ocupe todo el ancho de la ventana */
@@ -39,20 +38,17 @@ html {
   width: 100%;
   z-index: 100;
 }
-
 #navbar header .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
 }
-
 #navbar header .header-container nav ul {
   list-style: none;
   display: flex;
   align-items: center;
 }
-
 #navbar header .header-container nav ul li a {
   text-decoration: none;
   color: #673303;
@@ -60,25 +56,20 @@ html {
   font-weight: 600;
   transition: 0.3s;
 }
-
 #navbar header .header-container nav ul li a:hover {
   color: #fbde04;
   text-shadow: #673303 0.1em 0.1em 0.2em;
 }
-
 #navbar header #menu {
   color: transparent;
 }
-
 #home {
   height: 100vh;
 }
-
 #home .container {
   position: relative; /* Posición relativa para que los elementos internos puedan posicionarse con respecto a este */
   z-index: 1; /* Colocar el contenido sobre el video */
 }
-
 #home .container .presentation {
   /* backdrop-filter: blur(10px); */
   /* background-color: #cfcfcf; */
@@ -96,7 +87,6 @@ html {
   justify-content: center;
   align-items: center;
 }
-
 #home .container .presentation h1 {
   background: url("./public/Nigth\ mode.gif") repeat center center fixed;
   background-attachment: fixed;
@@ -113,7 +103,6 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 #home .container .presentation h2 {
   color: antiquewhite;
   font-size: 400%;
@@ -121,7 +110,6 @@ html {
   transition: 5s;
   margin-top: 9%;
 }
-
 #home .container .presentation h2:hover {
   background: url("./public/Nigth\ mode.gif") repeat center top fixed;
   background-attachment: fixed;
@@ -142,7 +130,6 @@ html {
   #673303 0 4px 0,
   #673303 0 5px 0; */
 }
-
 #home .container .presentation p {
   color: #3e1e00;
   font-size: 100%;
@@ -151,7 +138,6 @@ html {
   margin-right: 1rem;
   text-align: center;
 }
-
 #home .container a {
   text-decoration: none;
   color: rgb(72, 7, 141);
@@ -166,7 +152,6 @@ html {
   align-items: center;
   justify-content: center;
 }
-
 #aboutme .aboutme-container {
   backdrop-filter: blur(90px);
   width: 100%;
@@ -176,7 +161,6 @@ html {
   justify-content: center;
   padding-top: 1rem;
 }
-
 #aboutme .image-container {
   max-width: 20%;
   height: auto;
@@ -184,17 +168,14 @@ html {
   padding-bottom: 2rem;
   margin-right: 7%;
 }
-
 #aboutme .image-container img {
   width: 100%;
   height: 100%;
 }
-
 #aboutme .text-container {
   max-width: 60%;
   height: auto;
 }
-
 #aboutme .text-title-container {
   margin-top: 2%;
   margin-bottom: 2%;
@@ -205,7 +186,6 @@ html {
   flex-flow: column;
   align-items: center;
 }
-
 #aboutme .text-title-container .title {
   background: url("./public/Light\ Mode.gif") repeat center bottom fixed;
   background-attachment: fixed;
@@ -220,16 +200,13 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 #aboutme .text-container h4 {
   color: #49260b;
   padding-bottom: 2%;
 }
-
 #aboutme .text-container h4 span { 
   color: rgb(72, 7, 141);
 }
-
 #aboutme .text-container a {
   color: rgb(72, 7, 141);
   text-decoration: none;
@@ -250,7 +227,6 @@ html {
   justify-content: center;
   padding-top: 2rem;
 }
-
 #projects .text-container {
   margin-top: 3%;
   margin-bottom: 2%;
@@ -261,7 +237,6 @@ html {
   flex-flow: column;
   align-items: center;
 }
-
 #projects .text-container .title {
   background: url("./public/Light\ Mode.gif") repeat center bottom fixed;
   background-attachment: fixed;
@@ -276,35 +251,29 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 #projects .carrouseldirec {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
 }
-
 #projects .carrouseldirec .prev {
   display: flex;
   align-items: center; /* Centrar verticalmente */
   justify-content: center; /* Centrar horizontalmente */
   margin-left: 1%;
 }
-
 #projects .carrouseldirec .prev img {
   height: 40px; /* Ajustar la altura del contenedor */
 }
-
 #projects .carrouseldirec .next {
   display: flex;
   align-items: center; /* Centrar verticalmente */
   justify-content: center; /* Centrar horizontalmente */
   margin-right: 1%;
 }
-
 #projects .carrouseldirec .next img {
 height: 40px;
 }
-
 #projects .carrousel {
   width: 80%;
   max-width: 120em;
@@ -312,7 +281,6 @@ height: 40px;
   max-height: 90em;
   overflow: hidden;
 }
-
 #projects .carrousel .big {
   width: 200%;
   padding: 1%;
@@ -323,7 +291,6 @@ height: 40px;
   transition: all 0.5s ease;
   transform: translateX(0%);
 }
-
 #projects .carrousel .big .card {
   width: 100%;
   display: flex;
@@ -331,39 +298,32 @@ height: 40px;
   justify-content: space-between;
   backdrop-filter: blur(50px);
 }
-
 #projects .carrousel .big .card a {
   width: 50%;
   display: flex;
 }
-
 #projects .carrousel .big .card img {
   width: 100%;
 }
-
 #projects .carrousel .big .card .description {
   width: 50%;
   padding: 1rem;
   color:rgb(114, 7, 141)
 }
-
 #projects .carrousel .big .card .description .icon-img{
   width: auto;
   height: 20px; /* Alto deseado */
   display: inline-block; /* Mostrar como elemento en línea */
   margin-right: 8px; /* Margen derecho para separación entre iconos */
 }
-
 #projects .carrousel .big .card .description .card-text {
   color: #3e1e00;
   font-size: 90%;
   font-style: italic;
 }
-
 #projects .carrousel .big .card .description h4 {
   margin-top: 3%;
 }
-
 #projects .carrousel .dots {
   width: 100%;
   display: flex;
@@ -372,14 +332,12 @@ height: 40px;
   align-items: center;
   list-style: none;
 }
-
 #projects .carrousel .dot {
   width: 3em;
   height: 0.3em;
   margin: 0.2em .5em 1em;
   background-color: rgb(72, 7, 141);
 }
-
 #projects .carrousel .dot.active {
   background-image: linear-gradient(45deg, rgb(114, 7, 141), rgb(243, 163, 35));
 }
@@ -390,7 +348,6 @@ height: 40px;
   align-items: center;
   justify-content: center;
 }
-
 #skills .text-container {
   margin-top: 6%;
   margin-bottom: 2%;
@@ -401,7 +358,6 @@ height: 40px;
   flex-flow: column;
   align-items: center;
 }
-
 #skills .text-container .title {
   background: url("./public/Light\ Mode.gif") repeat center bottom fixed;
   background-attachment: fixed;
@@ -416,7 +372,6 @@ height: 40px;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 #skills .container  {
   width: 100%;
   display: flex;
@@ -424,7 +379,6 @@ height: 40px;
   justify-content: center;
   align-items: center;
 }
-
 #skills .container .card {
   margin: 2%;
   display: flex;
@@ -432,18 +386,15 @@ height: 40px;
   align-items: center;
   justify-content: center;
 }
-
 #skills .container .card .icon-img {
   width: auto;
   height: 70px; /* Alto deseado */
   box-sizing: border-box;
 }
-
 #skills .container .card h2 {
   font-size: 100%;
   color: #370994;
 }
-
 #skills #stats {
   color: #370994;
   padding: 0.5rem;
@@ -451,7 +402,6 @@ height: 40px;
   width: 100%;
   font-size: 1.5rem;
 }
-
 #skills #memory-game {
   max-height: 100vh;
   max-height: 600px;
@@ -461,7 +411,6 @@ height: 40px;
   align-items: center;
   justify-content: center;
 }
-
 #skills #memory-game .card {
   width: 90px;
   height: 90px;
@@ -470,11 +419,9 @@ height: 40px;
   transform-style: preserve-3d;
 transition-duration: 0.5s;
 }
-
 #skills #memory-game .card.active {
   transform: rotateY(180deg);
 }
-
 #skills #memory-game .card div {
   width: 100%;
   height: 100%;
@@ -485,27 +432,22 @@ transition-duration: 0.5s;
   backface-visibility: hidden;
   pointer-events: none;
 }
-
 #skills #memory-game .card .face {
   transform-style: preserve-3d;
   transform: rotateY(180deg);
   color: rgb(72, 7, 141);
   font-size: medium;
 }
-
 #skills #memory-game .card .face img {
   max-height: 100%;
   max-width: 100%;
 }
-
 #skills #memory-game .card .face .hidden {
   display: none;
 }
-
 #skills #memory-game .card .back {
 backdrop-filter: blur(90px);
 }
-
 #skills #toggleButton {
   background-color: #4caf4fd2; /* Color de fondo */
   border: none; /* Sin borde */
@@ -528,7 +470,6 @@ backdrop-filter: blur(90px);
   justify-content: center;
   width: 100%;
 }
-
 #contact .text-container {
   margin-top: 6%;
   margin-bottom: 2%;
@@ -539,7 +480,6 @@ backdrop-filter: blur(90px);
   flex-flow: column;
   align-items: center;
 }
-
 #contact .text-container .contact-title {
   background: url("./public/Light\ Mode.gif") repeat center bottom fixed;
   background-attachment: fixed;
@@ -555,7 +495,6 @@ backdrop-filter: blur(90px);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 #contact .contact-container {
   display: flex;
   flex-flow: row;
@@ -564,7 +503,6 @@ backdrop-filter: blur(90px);
   width: 100%;
   backdrop-filter: blur(90px);
 }
-
 #contact .contact-container .columns {
   display: flex;
   flex-flow: column wrap;
@@ -572,13 +510,11 @@ backdrop-filter: blur(90px);
   justify-content: space-between;
   width: 100%;
 }
-
 #contact .contact-container a {
   text-decoration: none;
   color: #673303
 
 }
-
 #contact .contact-container a:hover {
   color: #370994
 }
@@ -614,6 +550,15 @@ backdrop-filter: blur(90px);
 } */
 
 @media screen and (max-width: 600px) {
+
+  #background .video-container {
+    background-image: url('./public/background.png');
+    background-size: cover;
+    background-position: center;
+  }
+  #background .video-container video {
+    display: none;
+  }
 
   #navbar header .header-container nav ul {
     display: none;
