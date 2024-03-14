@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script defer src="app.js"></script>
+    <title>Alejo Escobar</title>
+  </head>
+
+  <body>
+    <!-- SECCIÓN BACKGROUND -->
+    <section id="background">
+      <div class="video-container">
+        <video autoplay loop muted>
+          <source src="./public/light-mode.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </section>
+
+    <!-- SECCIÓN NAVBAR -->
+    <section id="navbar">
+      <header>
+        <div class="header-container">
+          <img src="./public/logoAE.png" alt="Logo" class="logo" />
+          <nav>
+            <ul>
+              <li><a href="#home" class="active">HOME</a></li>
+              <li><a href="#aboutme">ABOUT ME</a></li>
+              <li><a href="#projects">PROJECTS</a></li>
+              <li><a href="#skills">SKILLS</a></li>
+              <li><a href="#contact">CONTACT</a></li>
+            </ul>
+          </nav>
+
+          <!--MENU RESPONSIVE--->
+          <div id="menu"  onclick="openNav()">
+            <i class="fa-solid fa-bars"></i>
+            <script src="./components/navbar/responsive/index.js"></script>
+          </div>
+
+        </div>
+      </header>
+    </section>
+
+    <!--------SECCIÓN INICIO-------->
+    <section id="home">
+      <div class="container">
+        <div class="presentation">
+          <h2>Full Stack Web Developer</h2>
+          <h1 class="transparente">Alejo Noel Escobar</h1>
+          <p class="description">
+            I welcome you to explore my portfolio, where you can discover a
+            selection of my past work and standout projects.
+          </p>
+          <p class="description">
+            From responsive websites to interactive web applications, each
+            project reflects my dedication to excellence and my passion for web
+            development.
+          </p>
+          <a href="#projects">Portfolio</a>
+        </div>
+      </div>
+    </section>
+
+    <!--------SECCIÓN ABOUT ME-------->
+    <section id="aboutme">
+      <div class="text-title-container">
+        <h2 class="title">ABOUT ME</h2>
+      </div>
+      <div class="aboutme-container" id="aboutme-container">
+        <div class="image-container">
+          <img src="./public/me.png" alt="" />
+        </div>
+        <div class="text-container">
+          <h4>
+            Hello! This is <span>Alejo</span>, an enthusiastic Full Stack Web
+            Developer living in Buenos Aires, Argentina. My nomadic life since
+            childhood taught me to adapt easily to new challenges. Passionate
+            about technology, my curiosity drives me to understand how things
+            work in depth. I believe in learning through experimentation, always
+            seeking to improve and face new challenges in web development.
+          </h4>
+          <a href="./public/pdf/AlejoEscobar-En.pdf" download="Alejo Escobar Resume" title="Download">Check out my resume</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN PROJECTS -->
+    <section id="projects">
+      <div class="text-container">
+        <h2 class="title">PROJECTS</h2>
+      </div>
+
+      <div class="carrouseldirec">
+        <div class="prev">
+          <img src="./public/prev.svg" alt="prev" class="img" loading="lazy" />
+        </div>
+
+        <div class="carrousel">
+          <div class="big">
+            <card class="card">
+              <a href="https://www.tykkera.com/" target="_blank">
+                <img src="./public/tykkera.png" alt="Tykkera" />
+              </a>
+
+              <div class="description">
+                <h2>Tykkera</h2>
+                <p class="card-text">
+                  Tykkera is an application designed to streamline operations
+                  for technology service and repair companies. It allows for
+                  detailed tracking of services, offers insights into generated
+                  utility, and facilitates employee monitoring. It helps
+                  companies optimize their operations and enhance efficiency,
+                  providing valuable insights to boost profitability.
+                </p>
+                <h4>SKILLS</h4>
+                <div>
+                  <img
+                    src="./public/icons/JavaScript.png"
+                    alt="js"
+                    class="icon-img"
+                    title="JavaScript"
+                  />
+                  <img
+                    src="./public/icons/HTML.png"
+                    alt="html"
+                    class="icon-img"
+                    title="HTML"
+                  />
+                  <img
+                    src="./public/icons/CSS.png"
+                    alt="css"
+                    class="icon-img"
+                    title="CSS"
+                  />
+                  <img
+                    src="./public/icons/Next.js.png"
+                    alt="next"
+                    class="icon-img"
+                    title="Next.js"
+                  />
+                  <img
+                    src="./public/icons/Node.js.png"
+                    alt="node"
+                    class="icon-img"
+                    title="Node.js"
+                  />
+                  <img
+                    src="./public/icons/React.png"
+                    alt="react"
+                    class="icon-img"
+                    title="React"
+                  />
+                  <img
+                    src="./public/icons/Redux.png"
+                    alt="redux"
+                    class="icon-img"
+                    title="Redux"
+                  />
+                  <img
+                    src="./public/icons/MongoDB.png"
+                    alt="mongo"
+                    class="icon-img"
+                    title="MongoDB"
+                  />
+                  <img
+                    src="./public/icons/PostgreSQL.png"
+                    alt="postgresql"
+                    class="icon-img"
+                    title="PostgreSQL"
+                  />
+                  <img
+                    src="./public/icons/Tailwind.png"
+                    alt="tailwind"
+                    class="icon-img"
+                    title="Tailwind"
+                  />
+                  <img
+                    src="./public/icons/github.png"
+                    alt="github"
+                    class="icon-img"
+                    title="git"
+                  />
+                </div>
+              </div>
+            </card>
+
+            <card class="card">
+              <a  target="_blank">
+                <img src="./public/VideogamesSPA.png" alt="VideogamesSPA" />
+              </a>
+              <div class="description">
+                <h3>Videogames APP</h3>
+                <p class="card-text">
+                  Imagine an app that serves as a comprehensive database for video games, complete with ratings, descriptions, available platforms, and more. This futuristic-designed app allows users to filter and sort through games effortlessly. Additionally, users can create and upload their own video games seamlessly.
+                </p>
+                <h4>SKILLS</h4>
+                <div>
+                  <img
+                    src="./public/icons/JavaScript.png"
+                    alt="js"
+                    class="icon-img"
+                    title="JavaScript"
+                  />
+                  <img
+                    src="./public/icons/HTML.png"
+                    alt="html"
+                    class="icon-img"
+                    title="HTML"
+                  />
+                  <img
+                    src="./public/icons/CSS.png"
+                    alt="css"
+                    class="icon-img"
+                    title="CSS"
+                  />
+                  <img
+                    src="./public/icons/React.png"
+                    alt="react"
+                    class="icon-img"
+                    title="React"
+                  />
+                  <img
+                    src="./public/icons/Redux.png"
+                    alt="redux"
+                    class="icon-img"
+                    title="Redux"
+                  />
+                  <img
+                    src="./public/icons/PostgreSQL.png"
+                    alt="postgresql"
+                    class="icon-img"
+                    title="PostgreSQL"
+                  />
+                  <img
+                    src="./public/icons/github.png"
+                    alt="github"
+                    class="icon-img"
+                    title="git"
+                  />
+                </div>
+              </div>
+            </card>
+          </div>
+
+          <ul class="dots">
+            <li class="dot active"></li>
+            <li class="dot"></li>
+          </ul>
+        </div>
+
+        <div class="next">
+          <img src="./public/next.png" alt="next" class="img" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN SKILLS -->
+    <section id="skills">
+      <div class="text-container">
+        <h2 class="title">SKILLS</h2>
+      </div>
+
+      <!-- technologies -->
+      <div id="technologies-skills">
+        <div class="container">
+          <div class="card">
+            <img
+              src="./public/icons/JavaScript.png"
+              alt="js"
+              class="icon-img"
+            />
+            <h2>JavaScript</h2>
+          </div>
+          <div class="card">
+            <img
+              src="./public/icons/Typescrypt.png"
+              alt="typescript"
+              class="icon-img"
+            />
+            <h2>TypeScript</h2>
+          </div>
+          <div class="card">
+            <img src="./public/icons/HTML.png" alt="html" class="icon-img" />
+            <h2>HTML</h2>
+          </div>
+          <div class="card">
+            <img src="./public/icons/CSS.png" alt="css" class="icon-img" />
+            <h2>CSS</h2>
+          </div>
+          <div class="card">
+            <img src="./public/icons/Next.js.png" alt="next" class="icon-img" />
+            <h2>Next.js</h2>
+          </div>
+          <div class="card">
+            <img src="./public/icons/Node.js.png" alt="node" class="icon-img" />
+            <h2>Node.js</h2>
+          </div>
+          <div class="card">
+            <img src="./public/icons/React.png" alt="react" class="icon-img" />
+            <h2>React</h2>
+          </div>
+          <div class="card">
+            <img
+              src="./public/icons/Redux.png"
+              alt="redux"
+              class="icon-img"
+              title="Redux"
+            />
+            <h2>Redux</h2>
+          </div>
+          <div class="card">
+            <img
+              src="./public/icons/MongoDB.png"
+              alt="mongo"
+              class="icon-img"
+              title="MongoDB"
+            />
+            <h2>MongoDB</h2>
+          </div>
+          <div class="card">
+            <img
+              src="./public/icons/PostgreSQL.png"
+              alt="postgresql"
+              class="icon-img"
+              title="PostgreSQL"
+            />
+            <h2>PostgreSQL</h2>
+          </div>
+          <div class="card">
+            <img
+              src="./public/icons/Tailwind.png"
+              alt="tailwind"
+              class="icon-img"
+              title="Tailwind"
+            />
+            <h2>Tailwind</h2>
+          </div>
+          <div class="card">
+            <img
+              src="./public/icons/github.png"
+              alt="github"
+              class="icon-img"
+              title="Git"
+            />
+            <h2>Git</h2>
+          </div>
+          <div class="card">
+            <img
+              src="./public/icons/jest.png"
+              alt="jest"
+              class="icon-img"
+              title="Jest"
+            />
+            <h2>Jest</h2>
+          </div>
+          <div class="card">
+            <img
+              src="./public/icons/Python.png"
+              alt="python"
+              class="icon-img"
+              title="Python"
+            />
+            <h2>Python</h2>
+          </div>
+          <div class="card">
+            <img
+              src="./public/icons/Cloudinary.png"
+              alt="cloudinary"
+              class="icon-img"
+              title="Cloudinary"
+            />
+            <h2>Cloudinary</h2>
+          </div>
+        </div>
+      </div>
+
+      <!-- memory game -->
+      <div id="memory-game-container">
+        <div id="stats">0 intentos</div>
+        <div id="memory-game"></div>
+        <script defer src="components/memory-game/index.js"></script>
+      </div>
+
+      <button id="toggleButton">Test your memory!</button>
+    </section>
+
+    <!-- SECCIÓN CONTACT -->
+    <section id="contact">
+
+      <div class="text-container">
+        <h2 class="contact-title">CONTACT ME</h2>
+
+      <div class="contact-container">
+
+        <div class="columns">     
+          <div><a href="https://www.linkedin.com/in/alejo-noel-escobar/" target="_blank"><i class="fa-brands fa-linkedin"></i> Alejo Noel Escobar</a></div>
+          <div><a href="mailto:alejonoelescobar@gmail" target="_blank"><i class="fa-solid fa-envelope"></i> alejonoelescobar@gmail.com</a></div>
+        </div>
+
+        <div class="columns">
+          <div><a href="https://www.instagram.com/alejo.noel/" target="_blank"><i class="fa-brands fa-square-instagram"></i> @alejo.noel</a></div>
+          <div><a href="https://github.com/alejonoel" target="_blank"><i class="fa-brands fa-square-github"></i> @alejonoel</a></div>
+          
+        </div>
+
+        <div class="columns">
+          <div><a href="https://wa.me/541128663108" target="_blank"><i class="fa-brands fa-square-whatsapp"></i> +54 1128663108</a></div>
+          <div><a ><i class="fa-solid fa-map-location-dot" target="_blank"></i> Buenos Aires, Argentina </a></div>
+        </div>
+      </div>
+
+    </section>
+
+  </body>
+</html>
