@@ -666,11 +666,11 @@ backdrop-filter: blur(90px);
 
 @media screen and (min-width: 1700px) {
   html{
-    font-size: 170%;
+    font-size: 160%;
   }
 
   #home .container .presentation h2 {
-    margin-top: 15%}
+    margin-top: 12%}
 
   #aboutme {
     padding-top: 0%;
