@@ -129,9 +129,7 @@ for (let i = 0; i < 15; i++) {
 
 // Función para mezclar las cartas
 function shuffleCards() {
-    console.log(1)
     const container = document.querySelector('#memory-game');
-    console.log(container);
     for (let i = container.children.length; i >= 0; i--) {
         container.appendChild(container.children[Math.random() * i | 0]);
     }

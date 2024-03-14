@@ -9,16 +9,22 @@ let currentPosition = 0;
 
 // Función para mover el carrusel hacia la izquierda
 const moveCarouselLeft = () => {
-    const newPosition = currentPosition === 0 ? 0 : currentPosition - 1;
-    updateCarouselPosition(newPosition);
+    if (currentPosition > 0) {
+        const newPosition = currentPosition - 1;
+        updateCarouselPosition(newPosition);
+    }
 };
 
 // Función para mover el carrusel hacia la derecha
 const moveCarouselRight = () => {
-    const totalSlides = document.querySelectorAll('.card').length;
-    const newPosition = currentPosition === totalSlides - 1 ? currentPosition : currentPosition + 1;
-    updateCarouselPosition(newPosition);
+    const totalSlides = document.querySelectorAll('.carrousel .big .card').length;
+    console.log(totalSlides)
+    if (currentPosition < totalSlides - 1) {
+        const newPosition = currentPosition + 1;
+        updateCarouselPosition(newPosition);
+    }
 };
+
 
 prev.addEventListener('click', moveCarouselLeft);
 
