@@ -2,15 +2,25 @@
   "name": "portfolio",
   "version": "1.0.0",
   "description": "",
+  "keywords": [],
+  "homepage": "https://github.com/alejonoelescobar/alejonoelescobar.github.io#readme",
+  "bugs": {
+    "url": "https://github.com/alejonoelescobar/alejonoelescobar.github.io/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alejonoelescobar/alejonoelescobar.github.io.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "@formkit/drag-and-drop": "^0.0.22",
     "react": "^18.2.0"
-  }
+  },
+  "devDependencies": {}
 }
