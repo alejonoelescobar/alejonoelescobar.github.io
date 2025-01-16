@@ -224,6 +224,77 @@ html {
 
 }
 
+#design-gallery {
+  margin: auto;
+  width: 100%;
+  display: flex;
+  z-index: 1;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+#design-gallery .text-container {
+  margin-top: 3%;
+  margin-bottom: 2%;
+  width: 100%;
+  padding: 1%;
+  backdrop-filter: blur(90px);
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+#design-gallery .text-container .title{
+  background: url("./public/Light\ Mode.gif") repeat center bottom fixed;
+  background-attachment: fixed;
+  background-repeat: repeat;
+  background-size: cover;
+  background-position-y: top;
+  background-clip: text;
+
+  color: transparent;
+  text-shadow: #6733035e 0 0 0;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#design-gallery .gallery-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las imágenes se ajusten en filas */
+  justify-content: center; /* Centra las imágenes horizontalmente */
+  gap: 20px; /* Espaciado entre las imágenes */
+}
+
+#design-gallery .gallery-item {
+  max-width: 100%;
+  backdrop-filter: blur(90px);
+  text-align: center; /* Centra el texto debajo de la imagen */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#design-gallery .gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+#design-gallery .gallery-item img {
+  max-height: 400px; /* Fija la altura máxima */
+  width: auto; /* Mantiene la proporción de las imágenes */
+  object-fit: cover; /* Se asegura de que la imagen cubra el área si es necesario */
+  display: block;
+  margin: 0 auto; /* Centra la imagen dentro de su contenedor */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#design-gallery .gallery-caption {
+  padding: 10px;
+  font-size: 1rem;
+  color: #333;
+}
+
+
 #projects {
   margin: auto;
   width: 100%;
@@ -237,9 +308,9 @@ html {
 #projects .text-container {
   margin-top: 3%;
   margin-bottom: 2%;
+  backdrop-filter: blur(90px);
   width: 100%;
   padding: 1%;
-  backdrop-filter: blur(90px);
   display: flex;
   flex-flow: column;
   align-items: center;
