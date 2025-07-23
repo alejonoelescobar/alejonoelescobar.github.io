@@ -1,164 +1,448 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" href="./public/favicon.ico.png" type="image/x-icon">
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <script defer src="app.js"></script>
-    <title>Alejo Escobar</title>
-  </head>
 
-  <body>
-    <!-- SECCIÓN BACKGROUND -->
-    <section id="background">
-      <div class="video-container">
-        <video autoplay loop muted>
-          <source src="./public/light-mode.mp4" type="video/mp4" />
-        </video>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <!-- Agrega los CSS de Bootstrap PRIMERO -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Luego, tu styles.css para que tus estilos personalizados sobrescriban los de Bootstrap si es necesario -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="./public/favicon.ico.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <title>Alejo Escobar</title>
+</head>
+
+<body>
+  <!-- SECCIÓN BACKGROUND -->
+  <section id="background">
+    <div class="video-container">
+      <video autoplay loop muted>
+        <source src="./public/light-mode.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </section>
+
+  <!-- SECCIÓN NAVBAR -->
+  <section id="navbar">
+    <header>
+      <div class="header-container">
+        <img src="./public/logoAE.png" alt="Logo" class="logo" />
+        <nav>
+          <ul>
+            <li><a href="#home" class="active">HOME</a></li>
+            <li><a href="#aboutme">ABOUT ME</a></li>
+            <li><a href="#design-gallery">PORTFOLIO</a></li>
+            <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="#skills">SKILLS</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+          </ul>
+        </nav>
+
+        <!--MENU RESPONSIVE--->
+        <div id="menu" onclick="openNav()">
+          <i class="fa-solid fa-bars"></i>
+          <script src="./components/navbar/responsive/index.js"></script>
+        </div>
+
       </div>
-    </section>
+    </header>
+  </section>
 
-    <!-- SECCIÓN NAVBAR -->
-    <section id="navbar">
-      <header>
-        <div class="header-container">
-          <img src="./public/logoAE.png" alt="Logo" class="logo" />
-          <nav>
-            <ul>
-              <li><a href="#home" class="active">HOME</a></li>
-              <li><a href="#aboutme">ABOUT ME</a></li>
-              <li><a href="#design-gallery">DESING GALLERY</a></li>
-              <li><a href="#projects">PROJECTS</a></li>
-              <li><a href="#skills">SKILLS</a></li>
-              <li><a href="#contact">CONTACT</a></li>
-            </ul>
-          </nav>
+  <!-- SECCIÓN INICIO -->
+  <section id="home">
+    <div class="container">
+      <div class="presentation">
+        <h2>Graphic Designer &</h2>
+        <h2 class="webdev">Web Developer</h2>
+        <h1 class="transparente">Alejo Noel Escobar</h1>
+        <p class="description">
+          Welcome to my portfolio! I’m passionate about multimedia design and web development, constantly evolving and
+          refining my skills in both fields.
+        </p>
+        <p class="description">
+          Explore my projects, which combine creative design with dynamic web development, showcasing my dedication to
+          continuous growth in the world of design.
+        </p>
+        <a href="#projects">Portfolio</a>
+      </div>
+    </div>
+  </section>
 
-          <!--MENU RESPONSIVE--->
-          <div id="menu"  onclick="openNav()">
-            <i class="fa-solid fa-bars"></i>
-            <script src="./components/navbar/responsive/index.js"></script>
+  <!-- SECCION design GALLERY -->
+  <section id="design-gallery">
+
+    <div class="text-container">
+      <h2 class="title">DESIGN PORTFOLIO GALLERY</h2>
+    </div>
+
+    <div class="gallery-container">
+
+      <!-- SUSSEX -->
+      <div class="gallery-item">
+        <img src="./public/design-images/photoshop/Sussex/TP3 - FINAL - Alejo-Noel-Escobar.jpg" alt="Project 4" />
+        <div class="gallery-caption">
+          <div class="caption-icon-title">
+            <img src="./public/icons/photoshop.png" alt="Photoshop Icon" class="tool-icon" />
+            <span>Sussex</span>
+          </div>
+          <button class="open-modal-btn" data-modal="modal-sussex">details</button>
+        </div>
+      </div>
+      <div id="modal-sussex" class="gallery-modal hidden">
+        <div class="modal-content">
+          <span class="modal-close" data-close="modal-sussex">&times;</span>
+
+          <!-- Video -->
+          <div class="modal-media">
+            <video autoplay muted loop playsinline>
+              <source src="./public/design-images/photoshop/Sussex/modal/Sussexlw.mp4" type="video/mp4" />
+              Tu navegador no soporta videos HTML5.
+            </video>
           </div>
 
+          <!-- Descripción + Icono -->
+          <div class="modal-description">
+            <div class="modal-header">
+              <img src="./public/icons/photoshop.png" alt="Photoshop Icon" class="tool-icon" />
+              <h2>Advertising campaign – Sussex</h2>
+            </div>
+            <p>This work focuses on a visual integration for advertising purposes, highlighting the absorption
+              properties of Sussex paper towels. Through advanced use of photomontage and compositing techniques in
+              Photoshop, a dramatic scene was created where a giant paper towel appears to block the flow of a river,
+              leaving dry land behind it. The goal was to communicate the brand's value proposition using visual
+              metaphor and realistic image manipulation.</p>
+          </div>
         </div>
-      </header>
-    </section>
+      </div>
 
-<!-- SECCIÓN INICIO -->
-<section id="home">
-  <div class="container">
-    <div class="presentation">
-      <h2>Graphic Designer &</h2>
-      <h2 class="webdev">Web Developer</h2>
-      <h1 class="transparente">Alejo Noel Escobar</h1>
-      <p class="description">
-        Welcome to my portfolio! I’m passionate about multimedia design and web development, constantly evolving and refining my skills in both fields.
-      </p>
-      <p class="description">
-        Explore my projects, which combine creative design with dynamic web development, showcasing my dedication to continuous growth in the world of design.
-      </p>
-      <a href="#projects">Portfolio</a>
+      <!-- TWOT 2 -->
+      <div class="gallery-item">
+        <img src="./public/design-images/photoshop/tp2/twotTP2.png" alt="Obra TP2" />
+        <div class="gallery-caption">
+          <div class="caption-icon-title">
+            <img src="./public/icons/photoshop.png" alt="Photoshop Icon" class="tool-icon" />
+            <span>Photo Manipulation</span>
+          </div>
+          <button class="open-modal-btn" data-modal="modal-twotTP2">details</button>
+        </div>
+      </div>
+      <div id="modal-twotTP2" class="gallery-modal hidden">
+        <div class="modal-content">
+          <span class="modal-close" data-close="modal-work1">&times;</span>
+
+          <!-- Video -->
+          <div class="modal-media">
+            <video autoplay muted loop playsinline>
+              <source src="./public/design-images/photoshop/tp2/modal/twotTP2lw.mp4" type="video/mp4" />
+              Tu navegador no soporta videos HTML5.
+            </video>
+          </div>
+
+          <!-- Descripción + Icono -->
+          <div class="modal-description">
+            <div class="modal-header">
+              <img src="./public/icons/photoshop.png" alt="Photoshop Icon" class="tool-icon" />
+              <h2>Artistic integration – The Wheel of Time</h2>
+            </div>
+            <p>This Photoshop composition explores a more artistic approach to integration, combining several elements
+              from The Wheel of Time series. Techniques included color and lighting matching, custom brush strokes
+              enhanced with fire filters to simulate floating magic, and multiple layered images that formed a
+              fantasy-inspired background. The final artwork served as the base for a personal graphic seal overlay.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- TWOT 1 -->
+      <div class="gallery-item">
+        <img src="./public/design-images/photoshop/TWOTtp1/twot.jpg" alt="Project 1" />
+        <div class="gallery-caption">
+          <div class="caption-icon-title">
+            <img src="./public/icons/photoshop.png" alt="Photoshop Icon" class="tool-icon" />
+            <span>Image compositing</span>
+          </div>
+          <button class="open-modal-btn" data-modal="modal-twotTP1">details</button>
+        </div>
+      </div>
+      <div id="modal-twotTP1" class="gallery-modal hidden">
+        <div class="modal-content">
+          <span class="modal-close" data-close="modal-twotTP1">&times;</span>
+
+          <!-- Video -->
+          <div class="modal-media">
+            <video autoplay muted loop playsinline>
+              <source src="./public/design-images/photoshop/TWOTtp1/modal/twottp1lw.mp4" type="video/mp4" />
+              Tu navegador no soporta videos HTML5.
+            </video>
+          </div>
+
+          <!-- Descripción + Icono -->
+          <div class="modal-description">
+            <div class="modal-header">
+              <img src="./public/icons/photoshop.png" alt="Photoshop Icon" class="tool-icon" />
+              <h2>Integration – The Wheel of Time</h2>
+            </div>
+            <p>This project involved the integration of brightly lit characters from The Wheel of Time into a dark
+              hallway setting. It required precise work with light and shadow using tools like Burn, Dodge, Curves,
+              Match Color, and projected shadows. The main goal was to achieve cohesion and realism, ensuring that all
+              elements felt naturally placed within the same environment.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hamster -->
+      <div class="gallery-item">
+        <img src="./public/design-images/illustrator/hamster/Escobar Alejo Noel TP2 Illustrator.jpg" alt="Hamster" />
+        <div class="gallery-caption">
+          <div class="caption-icon-title">
+            <img src="./public/icons/Illustrator.png" alt="Illustrator Icon" class="tool-icon" />
+            <span>3D Illustration</span>
+          </div>
+          <button class="open-modal-btn" data-modal="modal-hamster">details</button>
+        </div>
+      </div>
+      <div id="modal-hamster" class="gallery-modal hidden">
+        <div class="modal-content">
+          <span class="modal-close" data-close="modal-hamster">&times;</span>
+
+          <!-- Video -->
+          <div class="modal-media">
+            <video autoplay muted loop playsinline>
+              <source src="./public/design-images/illustrator/hamster/modal/renderlw.mp4" type="video/mp4" />
+              Tu navegador no soporta videos HTML5.
+            </video>
+          </div>
+
+          <!-- Descripción + Icono -->
+          <div class="modal-description">
+            <div class="modal-header">
+              <img src="./public/icons/Illustrator.png" alt="Illustrator Icon" class="tool-icon" />
+              <h2>Photo Manipulation</h2>
+            </div>
+            <p>This illustration was developed through manual tracing and mesh gradient techniques to simulate
+              three-dimensional volume and realistic lighting within a 2D vector environment. The Gradient Mesh tool
+              allowed for smooth transitions of light and shadow across the object, giving it depth and dimension. The
+              goal was to explore a more advanced use of Illustrator's tools to create a visually compelling and
+              semi-realistic result.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gozilla -->
+      <div class="gallery-item">
+        <img src="./public/design-images/illustrator/gozilla/ESCOBAR_ALEJO_NOEL_TP1_IlustracionVectorial.jpg"
+          alt="gozilla" />
+        <div class="gallery-caption">
+          <div class="caption-icon-title">
+            <img src="./public/icons/Illustrator.png" alt="Illustrator Icon" class="tool-icon" />
+            <span>Traced image</span>
+          </div>
+          <button class="open-modal-btn" data-modal="modal-gozilla">details</button>
+        </div>
+      </div>
+      <div id="modal-gozilla" class="gallery-modal hidden">
+        <div class="modal-content">
+          <span class="modal-close" data-close="modal-gozilla">&times;</span>
+
+          <!-- Video -->
+          <div class="modal-media">
+            <video autoplay muted loop playsinline>
+              <source src="./public/design-images/illustrator/gozilla/modal/gozillalw.mp4" type="video/mp4" />
+              Tu navegador no soporta videos HTML5.
+            </video>
+          </div>
+
+          <!-- Descripción + Icono -->
+          <div class="modal-description">
+            <div class="modal-header">
+              <img src="./public/icons/Illustrator.png" alt="Illustrator Icon" class="tool-icon" />
+              <h2>Photo Manipulation</h2>
+            </div>
+            <p>This project involved creating a vector illustration based on a reference image for another artist, using
+              the Image Trace tool and the Shape Builder tool (Shift + M) to merge and divide shapes. Custom strokes and
+              brushes were added to enhance the visual richness and detail of the final piece. The focus was on
+              developing a clean and technically coherent artwork, making the most of Illustrator’s non-destructive
+              editing capabilities.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cachafaz largo -->
+      <div class="gallery-item">
+        <img
+          src="./public/design-images/photoshop/Cachafaz/largo/DM Alejo Noel Escobar - Tratamiento de la imagen Producto en horizonal.jpg"
+          alt="Cachafaz largo" />
+        <div class="gallery-caption">
+          <div class="caption-icon-title">
+            <img src="./public/icons/photoshop.png" alt="Photoshop Icon" class="tool-icon" />
+            <span>Cachafaz</span>
+          </div>
+          <button class="open-modal-btn" data-modal="modal-cachafaz-largo">details</button>
+        </div>
+      </div>
+      <div id="modal-cachafaz-largo" class="gallery-modal hidden">
+        <div class="modal-content">
+          <span class="modal-close" data-close="modal-cachafaz-largo">&times;</span>
+
+          <!-- Video -->
+          <div class="modal-media">
+            <video autoplay muted loop playsinline>
+              <source src="./public/design-images/photoshop/Cachafaz/largo/modal/cachafaz-ancholw.mp4"
+                type="video/mp4" />
+              Tu navegador no soporta videos HTML5.
+            </video>
+          </div>
+
+          <!-- Descripción + Icono -->
+          <div class="modal-description">
+            <div class="modal-header">
+              <img src="./public/icons/photoshop.png" alt="Photoshop Icon" class="tool-icon" />
+              <h2>Product Focus – Cachafaz</h2>
+            </div>
+            <p>A minimalist product-focused composition highlighting a Cachafaz almond & peanut cookie package. The
+              horizontal layout features clean background surfaces, soft lighting, realistic shadows, and a reflection
+              effect. The goal was to enhance product visibility through basic visual hierarchy and image enhancement.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cachafaz cuadrado -->
+      <div class="gallery-item">
+        <img src="./public/design-images/photoshop/Cachafaz/cuadrado/DM Alejo Noel Escobar.jpg" alt="Project 2" />
+        <div class="gallery-caption">
+          <div class="caption-icon-title">
+            <img src="./public/icons/photoshop.png" alt="Photoshop Icon" class="tool-icon" />
+            <span>Cachafaz</span>
+          </div>
+          <button class="open-modal-btn" data-modal="modal-cachafaz">details</button>
+        </div>
+      </div>
+      <div id="modal-cachafaz" class="gallery-modal hidden">
+        <div class="modal-content">
+          <span class="modal-close" data-close="modal-cachafaz">&times;</span>
+
+          <!-- Video -->
+          <div class="modal-media">
+            <video autoplay muted loop playsinline>
+              <source src="./public/design-images/photoshop/Cachafaz/cuadrado/modal/cachafazcuadradolw.mp4"
+                type="video/mp4" />
+              Tu navegador no soporta videos HTML5.
+            </video>
+          </div>
+
+          <!-- Descripción + Icono -->
+          <div class="modal-description">
+            <div class="modal-header">
+              <img src="./public/icons/photoshop.png" alt="Photoshop Icon" class="tool-icon" />
+              <h2>Product Focus – Cachafaz</h2>
+            </div>
+            <p>A square-format product visual where the cookie package is central, surrounded by floating almonds and
+              peanuts. Using Gaussian blur, these elements simulate depth and movement, giving the impression they
+              emerge from the product. This project focused on basic visual effects and product-centric composition
+              using Photoshop.</p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="gallery-item">
+        <img src="./public/design-images/Infantil.jpg" alt="Project 3" />
+        <div class="gallery-caption">
+          <div class="caption-icon-title">
+            <img src="./public/icons/photoshop.png" alt="Photoshop Icon" class="tool-icon" />
+            <span>Children's book cover</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="./public/design-images/Adolescente.jpg" alt="Project 3" />
+        <div class="gallery-caption">
+          <div class="caption-icon-title">
+            <img src="./public/icons/photoshop.png" alt="Photoshop Icon" class="tool-icon" />
+            <span>Teen book cover</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="./public/design-images/Adulto.jpg" alt="Project 3" />
+        <div class="gallery-caption">
+          <div class="caption-icon-title">
+            <img src="./public/icons/photoshop.png" alt="Photoshop Icon" class="tool-icon" />
+            <span>Adult book cover</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Avatar -->
+      <div class="gallery-item">
+        <img src="./public/design-images/photoshop/avatar/DM_AlejoNoelEscobar_TP2.jpg" alt="Avatar" />
+        <div class="gallery-caption">
+          <div class="caption-icon-title">
+            <img src="./public/icons/photoshop.png" alt="Photoshop Icon" class="tool-icon" />
+            <span>Montage</span>
+          </div>
+          <button class="open-modal-btn" data-modal="modal-avatar">details</button>
+        </div>
+      </div>
+      <div id="modal-avatar" class="gallery-modal hidden">
+        <div class="modal-content">
+          <span class="modal-close" data-close="modal-avatar">&times;</span>
+
+          <!-- Video -->
+          <div class="modal-media">
+            <video autoplay muted loop playsinline>
+              <source src="./public/design-images/photoshop/avatar/modal/avatarp2lw.mp4" type="video/mp4" />
+              Tu navegador no soporta videos HTML5.
+            </video>
+          </div>
+
+          <!-- Descripción + Icono -->
+          <div class="modal-description">
+            <div class="modal-header">
+              <img src="./public/icons/photoshop.png" alt="Photoshop Icon" class="tool-icon" />
+              <h2>Photo integration – Artistic photomontage</h2>
+            </div>
+            <p>This project aimed to integrate several unrelated photographic elements into one cohesive composition.
+              Through the use of custom brushes, lighting adjustments, color mapping, and blending tools, the final
+              image merged diverse sources into a unified surreal or narrative-driven scene. The emphasis was on
+              creative storytelling through compositing.</p>
+          </div>
+        </div>
+      </div>
+
+
     </div>
-  </div>
-</section>
+  </section>
 
-    <!-- SECCIÓN ABOUT ME -->
-    <section id="aboutme">
-      <div class="text-title-container">
-        <h2 class="title">ABOUT ME</h2>
-      </div>
-      <div class="aboutme-container" id="aboutme-container">
-        <div class="image-container">
-          <img src="./public/me.png" alt="" />
-        </div>
-        <div class="text-container">
-          <h4>
-            Hello! This is <span>Alejo</span>, an enthusiastic Full Stack Web
-            Developer living in Buenos Aires, Argentina. My nomadic life since
-            childhood taught me to adapt easily to new challenges. Passionate
-            about technology, my curiosity drives me to understand how things
-            work in depth. I believe in learning through experimentation, always
-            seeking to improve and face new challenges in web development.
-          </h4>
-          <a href="./public/pdf/Alejo Noel Escobar - Curriculum-Vitae.pdf" download="Alejo Escobar Resume" title="Download">Check out my resume</a>
-        </div>
-      </div>
-    </section>
+  <!-- SECCIÓN PROGRAMMING PROJECTS -->
+  <section id="projects">
+    <div class="text-container">
+      <h2 class="title">PROGRAMMING PROJECTS</h2>
+    </div>
 
-    <!-- SECCION DESING GALLERY -->
-    <section id="design-gallery">
-      <div class="text-container">
-        <h2 class="title">DESING PORTFOLIO GALLERY</h2>
-      </div>
-      <div class="gallery-container">
-        <div class="gallery-item">
-          <img src="./public/desing-images/Escobar Alejo Noel TP2 Illustrator.jpg" alt="Project 1" />
-          <p class="gallery-caption">Illustrator: 3D Illustration</p>
-        </div>
-        <div class="gallery-item">
-          <img src="./public/desing-images/ESCOBAR_ALEJO_NOEL_TP1_IlustracionVectorial.jpg" alt="Project 1" />
-          <p class="gallery-caption">Illustrator: Traced image</p>
-        </div>
-        <div class="gallery-item">
-          <img src="./public/desing-images/TP3 - FINAL - Alejo-Noel-Escobar.jpg" alt="Project 4" />
-          <p class="gallery-caption">Photoshop: Sussex</p>
-        </div>
-        <div class="gallery-item">
-          <img src="./public/desing-images/DM Alejo Noel Escobar - Tratamiento de la imagen Producto en horizonal.jpg" alt="Project 1" />
-          <p class="gallery-caption">Photoshop: Cachafaz</p>
-        </div>
-        <div class="gallery-item">
-          <img src="./public/desing-images/DM Alejo Noel Escobar.jpg" alt="Project 2" />
-          <p class="gallery-caption">Photoshop: Cachafaz</p>
-        </div>
-        <div class="gallery-item">
-          <img src="./public/desing-images/Infantil.jpg" alt="Project 3" />
-          <p class="gallery-caption">Photoshop:Children's book cover</p>
-        </div>
-        <div class="gallery-item">
-          <img src="./public/desing-images/Adolescente.jpg" alt="Project 3" />
-          <p class="gallery-caption">Photoshop: Teen book cover</p>
-        </div>
-        <div class="gallery-item">
-          <img src="./public/desing-images/Adulto.jpg" alt="Project 3" />
-          <p class="gallery-caption">Photoshop: Adult book cover</p>
-        </div>
-        <div class="gallery-item">
-          <img src="./public/desing-images/DM_AlejoNoelEscobar_TP2.jpg" alt="Project 3" />
-          <p class="gallery-caption">Photoshop: Montage</p>
-        </div>
-      </div>
-    </section>
-    
+    <div class="carousel-main-wrapper"> <!-- Nuevo contenedor para el carrusel y los botones de navegación -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
 
-    <!-- SECCIÓN PROGRAMMING PROJECTS -->
-    <section id="projects">
-      <div class="text-container">
-        <h2 class="title">PROGRAMMING PROJECTS</h2>
-      </div>
-
-      <div class="carrouseldirec">
-        <div class="prev">
-          <img src="./public/prev.svg" alt="prev" class="img" loading="lazy" />
-        </div>
-
-        <div class="carrousel">
-          <div class="big">
-            <card class="card">
-              <a href="https://www.tykkera.com/" target="_blank">
-                <img src="./public/tykkera.png" alt="Tykkera" />
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="project-card">
+              <a href="https://www.tykkera.com/" target="_blank" rel="noopener noreferrer"
+                class="project-image-wrapper">
+                <img src="./public/carrousel-images/tykkera.png" class="d-block w-100" alt="Tykkera">
               </a>
-
-              <div class="description">
+              <div class="project-description">
                 <h2>Tykkera</h2>
                 <p class="card-text">
                   Tykkera is an application designed to streamline operations
@@ -169,303 +453,299 @@
                   providing valuable insights to boost profitability.
                 </p>
                 <h4>SKILLS</h4>
-                <div>
-                  <img
-                    src="./public/icons/JavaScript.png"
-                    alt="js"
-                    class="icon-img"
-                    title="JavaScript"
-                  />
-                  <img
-                    src="./public/icons/HTML.png"
-                    alt="html"
-                    class="icon-img"
-                    title="HTML"
-                  />
-                  <img
-                    src="./public/icons/CSS.png"
-                    alt="css"
-                    class="icon-img"
-                    title="CSS"
-                  />
-                  <img
-                    src="./public/icons/Next.js.png"
-                    alt="next"
-                    class="icon-img"
-                    title="Next.js"
-                  />
-                  <img
-                    src="./public/icons/Node.js.png"
-                    alt="node"
-                    class="icon-img"
-                    title="Node.js"
-                  />
-                  <img
-                    src="./public/icons/React.png"
-                    alt="react"
-                    class="icon-img"
-                    title="React"
-                  />
-                  <img
-                    src="./public/icons/Redux.png"
-                    alt="redux"
-                    class="icon-img"
-                    title="Redux"
-                  />
-                  <img
-                    src="./public/icons/MongoDB.png"
-                    alt="mongo"
-                    class="icon-img"
-                    title="MongoDB"
-                  />
-                  <img
-                    src="./public/icons/PostgreSQL.png"
-                    alt="postgresql"
-                    class="icon-img"
-                    title="PostgreSQL"
-                  />
-                  <img
-                    src="./public/icons/Tailwind.png"
-                    alt="tailwind"
-                    class="icon-img"
-                    title="Tailwind"
-                  />
-                  <img
-                    src="./public/icons/github.png"
-                    alt="github"
-                    class="icon-img"
-                    title="git"
-                  />
+                <div class="skills-icons">
+                  <img src="./public/icons/JavaScript.png" alt="js" class="icon-img" title="JavaScript" />
+                  <img src="./public/icons/HTML.png" alt="html" class="icon-img" title="HTML" />
+                  <img src="./public/icons/CSS.png" alt="css" class="icon-img" title="CSS" />
+                  <img src="./public/icons/Next.js.png" alt="next" class="icon-img" title="Next.js" />
+                  <img src="./public/icons/Node.js.png" alt="node" class="icon-img" title="Node.js" />
+                  <img src="./public/icons/React.png" alt="react" class="icon-img" title="React" />
+                  <img src="./public/icons/Redux.png" alt="redux" class="icon-img" title="Redux" />
+                  <img src="./public/icons/MongoDB.png" alt="mongo" class="icon-img" title="MongoDB" />
+                  <img src="./public/icons/PostgreSQL.png" alt="postgresql" class="icon-img" title="PostgreSQL" />
+                  <img src="./public/icons/Tailwind.png" alt="tailwind" class="icon-img" title="Tailwind" />
+                  <img src="./public/icons/github.png" alt="github" class="icon-img" title="git" />
                 </div>
               </div>
-            </card>
-
-            <card class="card">
-              <a  target="_blank">
-                <img src="./public/VideogamesSPA.png" alt="VideogamesSPA" />
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="project-card">
+              <a target="_blank" rel="noopener noreferrer" class="project-image-wrapper">
+                <img src="./public/carrousel-images/MaiaGame.png" class="d-block w-100" alt="Save Maia Game" />
               </a>
-              <div class="description">
-                <h2>Videogames APP</h2>
+              <div class="project-description">
+                <h2>Save Maia – Interactive Game</h2>
                 <p class="card-text">
-                  Imagine an app that serves as a comprehensive database for video games, complete with ratings, descriptions, available platforms, and more. This futuristic-designed app allows users to filter and sort through games effortlessly. Additionally, users can create and upload their own video games seamlessly.
+                  "Save Maia" is an interactive narrative game that places players in a tense, immersive experience
+                  where every decision can mean life or death. The story follows Maia, a young woman kidnapped and
+                  trapped in a mysterious location. Players must choose how she reacts to different
+                  situations—attempting to escape, confront the captor, or seek help—uncovering new paths and
+                  consequences with each choice. This project combines design, storytelling, and user interaction to
+                  create a powerful digital experience.
                 </p>
                 <h4>SKILLS</h4>
-                <div>
-                  <img
-                    src="./public/icons/JavaScript.png"
-                    alt="js"
-                    class="icon-img"
-                    title="JavaScript"
-                  />
-                  <img
-                    src="./public/icons/HTML.png"
-                    alt="html"
-                    class="icon-img"
-                    title="HTML"
-                  />
-                  <img
-                    src="./public/icons/CSS.png"
-                    alt="css"
-                    class="icon-img"
-                    title="CSS"
-                  />
-                  <img
-                    src="./public/icons/React.png"
-                    alt="react"
-                    class="icon-img"
-                    title="React"
-                  />
-                  <img
-                    src="./public/icons/Redux.png"
-                    alt="redux"
-                    class="icon-img"
-                    title="Redux"
-                  />
-                  <img
-                    src="./public/icons/PostgreSQL.png"
-                    alt="postgresql"
-                    class="icon-img"
-                    title="PostgreSQL"
-                  />
-                  <img
-                    src="./public/icons/github.png"
-                    alt="github"
-                    class="icon-img"
-                    title="git"
-                  />
+                <div class="skills-icons">
+                  <img src="./public/icons/HTML.png" alt="html" class="icon-img" title="HTML" />
+                  <img src="./public/icons/CSS.png" alt="css" class="icon-img" title="CSS" />
+                  <img src="./public/icons/Photoshop.png" alt="photoshop" class="icon-img" title="Photoshop" />
+                  <img src="./public/icons/Illustrator.png" alt="illustrator" class="icon-img" title="Illustrator" />
+                  <img src="./public/icons/Canva.png" alt="canva" class="icon-img" title="Canva" />
                 </div>
               </div>
-            </card>
+            </div>
           </div>
 
-          <ul class="dots">
-            <li class="dot active"></li>
-            <li class="dot"></li>
-          </ul>
+          <div class="carousel-item">
+            <div class="project-card">
+              <a target="_blank" rel="noopener noreferrer" class="project-image-wrapper">
+                <img src="./public/carrousel-images/VideogamesSPA.png" class="d-block w-100" alt="VideogamesSPA" />
+              </a>
+              <div class="project-description">
+                <h2>Videogames APP</h2>
+                <p class="card-text">
+                  Imagine an app that serves as a comprehensive database for video games, complete with ratings,
+                  descriptions, available platforms, and more. This futuristic-designed app allows users to filter and
+                  sort through games effortlessly. Additionally, users can create and upload their own video games
+                  seamlessly.
+                </p>
+                <h4>SKILLS</h4>
+                <div class="skills-icons">
+                  <img src="./public/icons/JavaScript.png" alt="js" class="icon-img" title="JavaScript" />
+                  <img src="./public/icons/HTML.png" alt="html" class="icon-img" title="HTML" />
+                  <img src="./public/icons/CSS.png" alt="css" class="icon-img" title="CSS" />
+                  <img src="./public/icons/React.png" alt="react" class="icon-img" title="React" />
+                  <img src="./public/icons/Redux.png" alt="redux" class="icon-img" title="Redux" />
+                  <img src="./public/icons/PostgreSQL.png" alt="postgresql" class="icon-img" title="PostgreSQL" />
+                  <img src="./public/icons/github.png" alt="github" class="icon-img" title="git" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Añade más carousel-item aquí para tus otros proyectos -->
+
         </div>
 
-        <div class="next">
-          <img src="./public/next.png" alt="next" class="img" loading="lazy" />
+         <!-- Aquí va el carousel-indicators dentro del carousel -->
+         <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
         </div>
       </div>
-    </section>
 
-    <!-- SECCIÓN SKILLS -->
-    <section id="skills">
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+      
+    </div>
+
+  </section>
+
+  <!-- SECCIÓN SKILLS -->
+  <section id="skills">
+    <div class="text-container">
+      <h2 class="title">SKILLS</h2>
+    </div>
+
+    <!-- technologies -->
+    <div id="technologies-skills">
+      <div class="container">
+
+        <div class="card"><img src="./public/icons/Illustrator.png" alt="illustrator" class="icon-img" />
+          <h2>Illustrator</h2>
+        </div>
+        <div class="card">
+          <img src="./public/icons/Photoshop.png" alt="photoshop" class="icon-img" />
+          <h2>Photoshop</h2>
+        </div>
+        <div class="card">
+          <img src="./public/icons/After-effects.png" alt="aftereffects" class="icon-img" />
+          <h2>After Effects</h2>
+        </div>
+        <div class="card">
+          <img src="./public/icons/PremierePro.png" alt="PremierePro" class="icon-img" />
+          <h2>Premiere Pro</h2>
+        </div>
+        <div class="card">
+          <img src="./public/icons/Canva.png" alt="canva" class="icon-img" />
+          <h2>Canva</h2>
+        </div>
+        <div class="card">
+          <img src="./public/icons/JavaScript.png" alt="js" class="icon-img" />
+          <h2>JavaScript</h2>
+        </div>
+        <div class="card">
+          <img src="./public/icons/Typescrypt.png" alt="typescript" class="icon-img" />
+          <h2>TypeScript</h2>
+        </div>
+        <div class="card">
+          <img src="./public/icons/HTML.png" alt="html" class="icon-img" />
+          <h2>HTML</h2>
+        </div>
+        <div class="card">
+          <img src="./public/icons/CSS.png" alt="css" class="icon-img" />
+          <h2>CSS</h2>
+        </div>
+        <div class="card">
+          <img src="./public/icons/Next.js.png" alt="next" class="icon-img" />
+          <h2>Next.js</h2>
+        </div>
+        <div class="card">
+          <img src="./public/icons/Node.js.png" alt="node" class="icon-img" />
+          <h2>Node.js</h2>
+        </div>
+        <div class="card">
+          <img src="./public/icons/React.png" alt="react" class="icon-img" />
+          <h2>React</h2>
+        </div>
+        <div class="card">
+          <img src="./public/icons/Redux.png" alt="redux" class="icon-img" title="Redux" />
+          <h2>Redux</h2>
+        </div>
+        <div class="card">
+          <img src="./public/icons/MongoDB.png" alt="mongo" class="icon-img" title="MongoDB" />
+          <h2>MongoDB</h2>
+        </div>
+        <div class="card">
+          <img src="./public/icons/PostgreSQL.png" alt="postgresql" class="icon-img" title="PostgreSQL" />
+          <h2>PostgreSQL</h2>
+        </div>
+        <div class="card">
+          <img src="./public/icons/Tailwind.png" alt="tailwind" class="icon-img" title="Tailwind" />
+          <h2>Tailwind</h2>
+        </div>
+        <div class="card">
+          <img src="./public/icons/github.png" alt="github" class="icon-img" title="Git" />
+          <h2>Git</h2>
+        </div>
+        <div class="card">
+          <img src="./public/icons/jest.png" alt="jest" class="icon-img" title="Jest" />
+          <h2>Jest</h2>
+        </div>
+        <div class="card">
+          <img src="./public/icons/Python.png" alt="python" class="icon-img" title="Python" />
+          <h2>Python</h2>
+        </div>
+        <div class="card">
+          <img src="./public/icons/Cloudinary.png" alt="cloudinary" class="icon-img" title="Cloudinary" />
+          <h2>Cloudinary</h2>
+        </div>
+      </div>
+    </div>
+
+    <!-- memory game -->
+    <div id="memory-game-container">
+      <div id="stats">0 attempts</div>
+      <div id="memory-game"></div>
+      <button id="resetButton">Reset</button>
+    </div>
+
+    <button id="toggleButton">Test your memory!</button>
+
+    <div id="win-popup" class="popup hidden">
+      <div class="popup-content">
+        <h2>¡Felicidades!</h2>
+        <p>Completaste el juego de memoria.</p>
+        <button id="popup-close">Cerrar</button>
+      </div>
+    </div>
+
+
+  </section>
+
+  <!-- SECCIÓN ABOUT ME -->
+  <section id="aboutme">
+    <div class="text-container-aboutme">
+      <h2 class="title">ABOUT ME</h2>
+    </div>
+    <div class="aboutme-container" id="aboutme-container">
+      <div class="image-container">
+        <img src="./public/me.png" alt="" />
+      </div>
       <div class="text-container">
-        <h2 class="title">SKILLS</h2>
+        <h4>
+          Hello! This is <span>Alejo</span>, an enthusiastic Full Stack Web
+          Developer living in Buenos Aires, Argentina. My nomadic life since
+          childhood taught me to adapt easily to new challenges. Passionate
+          about technology, my curiosity drives me to understand how things
+          work in depth. I believe in learning through experimentation, always
+          seeking to improve and face new challenges in web development.
+        </h4>
+        <a href="./public/pdf/Alejo Noel Escobar - Curriculum-Vitae.pdf" download="Alejo Escobar Resume"
+          title="Download">Check out my resume</a>
       </div>
+    </div>
+  </section>
 
-      <!-- technologies -->
-      <div id="technologies-skills">
-        <div class="container">
-          <div class="card">
-            <img
-              src="./public/icons/JavaScript.png"
-              alt="js"
-              class="icon-img"
-            />
-            <h2>JavaScript</h2>
-          </div>
-          <div class="card">
-            <img
-              src="./public/icons/Typescrypt.png"
-              alt="typescript"
-              class="icon-img"
-            />
-            <h2>TypeScript</h2>
-          </div>
-          <div class="card">
-            <img src="./public/icons/HTML.png" alt="html" class="icon-img" />
-            <h2>HTML</h2>
-          </div>
-          <div class="card">
-            <img src="./public/icons/CSS.png" alt="css" class="icon-img" />
-            <h2>CSS</h2>
-          </div>
-          <div class="card">
-            <img src="./public/icons/Next.js.png" alt="next" class="icon-img" />
-            <h2>Next.js</h2>
-          </div>
-          <div class="card">
-            <img src="./public/icons/Node.js.png" alt="node" class="icon-img" />
-            <h2>Node.js</h2>
-          </div>
-          <div class="card">
-            <img src="./public/icons/React.png" alt="react" class="icon-img" />
-            <h2>React</h2>
-          </div>
-          <div class="card">
-            <img
-              src="./public/icons/Redux.png"
-              alt="redux"
-              class="icon-img"
-              title="Redux"
-            />
-            <h2>Redux</h2>
-          </div>
-          <div class="card">
-            <img
-              src="./public/icons/MongoDB.png"
-              alt="mongo"
-              class="icon-img"
-              title="MongoDB"
-            />
-            <h2>MongoDB</h2>
-          </div>
-          <div class="card">
-            <img
-              src="./public/icons/PostgreSQL.png"
-              alt="postgresql"
-              class="icon-img"
-              title="PostgreSQL"
-            />
-            <h2>PostgreSQL</h2>
-          </div>
-          <div class="card">
-            <img
-              src="./public/icons/Tailwind.png"
-              alt="tailwind"
-              class="icon-img"
-              title="Tailwind"
-            />
-            <h2>Tailwind</h2>
-          </div>
-          <div class="card">
-            <img
-              src="./public/icons/github.png"
-              alt="github"
-              class="icon-img"
-              title="Git"
-            />
-            <h2>Git</h2>
-          </div>
-          <div class="card">
-            <img
-              src="./public/icons/jest.png"
-              alt="jest"
-              class="icon-img"
-              title="Jest"
-            />
-            <h2>Jest</h2>
-          </div>
-          <div class="card">
-            <img
-              src="./public/icons/Python.png"
-              alt="python"
-              class="icon-img"
-              title="Python"
-            />
-            <h2>Python</h2>
-          </div>
-          <div class="card">
-            <img
-              src="./public/icons/Cloudinary.png"
-              alt="cloudinary"
-              class="icon-img"
-              title="Cloudinary"
-            />
-            <h2>Cloudinary</h2>
-          </div>
-        </div>
-      </div>
+  <!-- SECCIÓN CONTACT -->
+  <section id="contact">
 
-      <!-- memory game -->
-      <div id="memory-game-container">
-        <div id="stats">0 attempts</div>
-        <div id="memory-game"></div>
-        <script defer src="components/memory-game/index.js"></script>
-      </div>
-
-      <button id="toggleButton">Test your memory!</button>
-    </section>
-
-    <!-- SECCIÓN CONTACT -->
-    <section id="contact">
-
-      <div class="text-container">
-        <h2 class="contact-title">CONTACT ME</h2>
+    <div class="text-container">
+      <h2 class="contact-title">CONTACT ME</h2>
 
       <div class="contact-container">
 
-        <div class="columns">     
-          <div><a href="https://www.linkedin.com/in/alejo-noel-escobar/" target="_blank"><i class="fa-brands fa-linkedin"></i> Alejo Noel Escobar</a></div>
-          <div><a href="mailto:alejonoelescobar@gmail" target="_blank"><i class="fa-solid fa-envelope"></i> alejonoelescobar@gmail.com</a></div>
+        <div class="columns">
+          <div><a href="https://www.linkedin.com/in/alejo-noel-escobar/" target="_blank"><i
+                class="fa-brands fa-linkedin"></i> Alejo Noel Escobar</a></div>
+          <div><a href="mailto:alejonoelescobar@gmail" target="_blank"><i class="fa-solid fa-envelope"></i>
+              alejonoelescobar@gmail.com</a></div>
         </div>
 
         <div class="columns">
-          <div><a href="https://www.instagram.com/alejo.noel/" target="_blank"><i class="fa-brands fa-square-instagram"></i> @alejo.noel</a></div>
-          <div><a href="https://github.com/alejonoelescobar" target="_blank"><i class="fa-brands fa-square-github"></i> @alejonoelescobar</a></div>
-          
+          <div><a href="https://www.instagram.com/alejo.noel/" target="_blank"><i
+                class="fa-brands fa-square-instagram"></i> @alejo.noel</a></div>
+          <div><a href="https://github.com/alejonoelescobar" target="_blank"><i class="fa-brands fa-square-github"></i>
+              @alejonoelescobar</a></div>
+
         </div>
 
         <div class="columns">
-          <div><a href="https://wa.me/541128663108" target="_blank"><i class="fa-brands fa-square-whatsapp"></i> +54 1128663108</a></div>
-          <div><a ><i class="fa-solid fa-map-location-dot" target="_blank"></i> Buenos Aires, Argentina </a></div>
+          <div><a href="https://wa.me/541128663108" target="_blank"><i class="fa-brands fa-square-whatsapp"></i> +54
+              1128663108</a></div>
+          <div><a><i class="fa-solid fa-map-location-dot" target="_blank"></i> Buenos Aires, Argentina </a></div>
         </div>
       </div>
 
-    </section>
+  </section>
 
-  </body>
+  <!-- Script de Bootstrap para el carrusel -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <!-- Script de Bootstrap para el memory game -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggleButton = document.getElementById("toggleButton");
+      const memoryGameContainer = document.getElementById("memory-game-container");
+      const skillsCards = document.getElementById("technologies-skills");
+
+      toggleButton.addEventListener("click", () => {
+        memoryGameContainer.classList.toggle("active");
+
+        if (memoryGameContainer.classList.contains("active")) {
+          skillsCards.style.display = "none";
+          toggleButton.textContent = "Back to skills";
+        } else {
+          skillsCards.style.display = "flex";
+          toggleButton.textContent = "Test your memory!";
+        }
+      });
+    });
+  </script>
+
+  <script src="./components/memory-game/index.js"></script>
+
+  <!-- Script de Bootstrap para el memory game -->
+  <script src="script.js"></script>
+</body>
+
 </html>

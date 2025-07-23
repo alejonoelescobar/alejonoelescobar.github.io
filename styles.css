@@ -65,7 +65,7 @@ html {
 }
 
 #home {
-  height: 100vh;
+  height: 100vh; /* Asegura que ocupe el 100% de la altura de la vista */
 }
 #home .container {
   position: relative; /* Posición relativa para que los elementos internos puedan posicionarse con respecto a este */
@@ -89,14 +89,14 @@ html {
   align-items: center;
 }
 #home .container .presentation h1 {
-  background: url("./public/Nigth\ mode.gif") repeat center center fixed;
+  background: url("./public/background/night/Night\ mode.gif") repeat center center fixed;
   background-attachment: fixed;
   background-repeat: repeat-x;
   background-size: cover;
   background-position: top;
   background-clip: text;
 
-  font-size: 600%;
+  font-size: 8vw; /* Ajustado a vw para mejor responsividad */
   font-style: italic;
   color: transparent;
   margin-top: -2rem;
@@ -107,7 +107,7 @@ html {
 
 #home .container .presentation h2 {
   color: antiquewhite;
-  font-size: 400%;
+  font-size: 4vw; /* Ajustado a vw para mejor responsividad */
   font-style: normal;
   transition: 5s;
   margin-top: 9%;
@@ -123,7 +123,7 @@ html {
   background-position-y: center;
   background-clip: text;
 
-  font-size: 400%;
+  font-size: 4vw; /* Ajustado a vw para mejor responsividad */
   color: transparent;
   text-shadow: #673303 0 0 0em;
 
@@ -167,6 +167,9 @@ html {
   align-items: center;
   justify-content: center;
   padding-top: 1rem;
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 8px 20px rgba(0, 0, 0, 0.15);
 }
 #aboutme .image-container {
   max-width: 20%;
@@ -179,11 +182,10 @@ html {
   width: 100%;
   height: 100%;
 }
+
 #aboutme .text-container {
-  max-width: 60%;
+  max-width: 100%;
   height: auto;
-}
-#aboutme .text-title-container {
   margin-top: 2%;
   margin-bottom: 2%;
   width: 100%;
@@ -193,7 +195,22 @@ html {
   flex-flow: column;
   align-items: center;
 }
-#aboutme .text-title-container .title {
+#aboutme .text-container-aboutme {
+  max-width: 100%;
+  height: auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  width: 100%;
+  padding: 1%;
+  backdrop-filter: blur(90px);
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 8px 20px rgba(0, 0, 0, 0.15);
+}
+#aboutme .text-container-aboutme .title {
   background: url("./public/Light\ Mode.gif") repeat center bottom fixed;
   background-attachment: fixed;
   background-repeat: repeat;
@@ -208,6 +225,7 @@ html {
   -webkit-text-fill-color: transparent;
 }
 #aboutme .text-container h4 {
+  font-size: 1.1em; /* Ajustado el tamaño de la fuente para el texto de About Me */
   color: #49260b;
   padding-bottom: 2%;
 }
@@ -215,14 +233,20 @@ html {
   color: rgb(72, 7, 141);
 }
 #aboutme .text-container a {
-  color: rgb(72, 7, 141);
   text-decoration: none;
+  color: rgb(72, 7, 141);
   font-style: italic;
   text-align: center; /* Centrar el texto horizontalmente */
   display: block; /* Convertir el enlace en un bloque para centrar verticalmente */
   margin: auto; /* Centrar verticalmente */
 
 }
+
+
+
+
+
+
 
 #design-gallery {
   margin: auto;
@@ -244,6 +268,9 @@ html {
   display: flex;
   flex-flow: column;
   align-items: center;
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 8px 20px rgba(0, 0, 0, 0.15);
 }
 #design-gallery .text-container .title{
   background: url("./public/Light\ Mode.gif") repeat center bottom fixed;
@@ -262,6 +289,7 @@ html {
 
 #design-gallery .gallery-container {
   display: flex;
+  max-width: 95%;
   flex-wrap: wrap; /* Permite que las imágenes se ajusten en filas */
   justify-content: center; /* Centra las imágenes horizontalmente */
   gap: 20px; /* Espaciado entre las imágenes */
@@ -272,6 +300,9 @@ html {
   backdrop-filter: blur(90px);
   text-align: center; /* Centra el texto debajo de la imagen */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow:
+  0 4px 6px rgba(0, 0, 0, 0.1),
+  0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 #design-gallery .gallery-item:hover {
@@ -289,10 +320,150 @@ html {
 }
 
 #design-gallery .gallery-caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 10px;
   font-size: 1rem;
   color: #333;
 }
+
+/* Estilo del modal general */
+.gallery-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.533);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Oculta el modal por defecto */
+.gallery-modal.hidden {
+  display: none;
+}
+
+/* Contenido del modal */
+.modal-content {
+  color: rgba(255, 255, 255, 0.883);
+  max-width: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 2rem;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+}
+
+.modal-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+
+.open-modal-btn {
+  margin-top: 10px;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  border: none;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.open-modal-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.open-modal-btn {
+  margin-top: 10px;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  color: #333;
+  border: none;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.open-modal-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.modal-description p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.modal-close {
+  align-self: flex-end;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Video */
+.modal-media video {
+  max-width: 400px;
+}
+
+.tool-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacio entre el ícono y el título */
+  margin-bottom: 1rem;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.caption-icon-title {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem; /* Espacio muy sutil entre ícono y texto */
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+}
+
+.caption-icon-title .tool-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+
+
+
+
+
+
+
 
 
 #projects {
@@ -314,6 +485,9 @@ html {
   display: flex;
   flex-flow: column;
   align-items: center;
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 8px 20px rgba(0, 0, 0, 0.15);
 }
 #projects .text-container .title {
   background: url("./public/Light\ Mode.gif") repeat center bottom fixed;
@@ -329,217 +503,410 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-#projects .carrouseldirec {
+
+/* Nuevo contenedor para el carrusel y los botones de navegación */
+.carousel-main-wrapper {
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-}
-#projects .carrouseldirec .prev {
-  display: flex;
-  align-items: center; /* Centrar verticalmente */
-  justify-content: center; /* Centrar horizontalmente */
-  margin-left: 1%;
-}
-#projects .carrouseldirec .prev img {
-  height: 40px; /* Ajustar la altura del contenedor */
-}
-#projects .carrouseldirec .next {
-  display: flex;
-  align-items: center; /* Centrar verticalmente */
-  justify-content: center; /* Centrar horizontalmente */
-  margin-right: 1%;
-}
-#projects .carrouseldirec .next img {
-height: 40px;
-}
-#projects .carrousel {
-  width: 80%;
+  align-items: center; /* Alinea verticalmente los elementos */
+  width: 95%; /* Ancho del contenedor principal del carrusel y botones */
   max-width: 120em;
-  height: 80%;
-  max-height: 90em;
-  overflow: hidden;
-}
-#projects .carrousel .big {
-  width: 200%;
-  padding: 1%;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-  
-  transition: all 0.5s ease;
-  transform: translateX(0%);
-}
-#projects .carrousel .big .card {
-  width: 100%;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  backdrop-filter: blur(50px);
-}
-#projects .carrousel .big .card a {
-  width: 50%;
-  display: flex;
-}
-#projects .carrousel .big .card img {
-  width: 100%;
-}
-#projects .carrousel .big .card .description {
-  width: 50%;
-  padding: 1rem;
-  color:rgb(114, 7, 141)
-}
-#projects .carrousel .big .card .description .icon-img{
-  width: auto;
-  height: 20px; /* Alto deseado */
-  display: inline-block; /* Mostrar como elemento en línea */
-  margin-right: 8px; /* Margen derecho para separación entre iconos */
-}
-#projects .carrousel .big .card .description .card-text {
-  color: #3e1e00;
-  font-size: 90%;
-  font-style: italic;
-}
-#projects .carrousel .big .card .description h4 {
-  margin-top: 3%;
-}
-#projects .carrousel .dots {
-  width: 100%;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-}
-#projects .carrousel .dot {
-  width: 3em;
-  height: 0.3em;
-  margin: 0.2em .5em 1em;
-  background-color: rgb(72, 7, 141);
-}
-#projects .carrousel .dot.active {
-  background-image: linear-gradient(45deg, rgb(114, 7, 141), rgb(243, 163, 35));
+  margin: 20px auto; /* Centrar y dar margen */
+  /* Eliminado box-shadow, background-color, backdrop-filter, border-radius de aquí */
 }
 
+/* Estilos para el contenedor del carrusel de Bootstrap (solo el carrusel en sí) */
+#carouselExampleIndicators {
+  flex-grow: 1; /* Permite que el carrusel ocupe el espacio disponible entre los botones */
+  height: auto; /* Altura automática para adaptarse al contenido */
+  border-radius: 0; /* ELIMINADO: Bordes redondeados */
+  overflow: hidden; /* Asegura que el contenido se mantenga dentro de los bordes */
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 8px 20px rgba(0, 0, 0, 0.15);
+
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Eliminadas propiedades de margin, box-shadow, background-color, backdrop-filter ya que estaban en .carousel-main-wrapper */
+}
+
+/* Estilos de cada "slide" de proyecto */
+.project-card {
+  display: flex; /* Para la distribución de imagen y descripción */
+  flex-direction: row; /* Por defecto, en fila (escritorio) */
+  width: 100%;
+  border-radius: 0; /* ELIMINADO: Bordes redondeados para la tarjeta */
+  overflow: hidden; /* Asegura que la imagen no se desborde */
+}
+
+.project-image-wrapper {
+  width: 50%; /* Ocupa la mitad del ancho en escritorio */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.project-image-wrapper img {
+  width: 100%;
+  height: 400px; /* Altura fija para las imágenes del proyecto en escritorio */
+  object-fit: cover; /* Recorta la imagen para cubrir el área */
+  transition: transform 0.3s ease;
+}
+
+.project-image-wrapper img:hover {
+  transform: scale(1.05);
+}
+
+.project-description {
+  width: 50%; /* Ocupa la otra mitad del ancho en escritorio */
+  padding: 1rem; /* Padding similar a tu .description original */
+  color: rgb(16, 15, 17); /* Color de texto similar al original */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  backdrop-filter: blur(90px);
+}
+
+.project-description h2 {
+  /* Mantener los estilos de h2 si los tenías antes, o añadir si es necesario */
+  margin-bottom: 15px; /* Espacio debajo del título del proyecto */
+  color: rgb(96, 0, 186);
+}
+
+.project-description .card-text {
+  color: #3e1e00; /* Color de texto similar al original */
+  font-size: 90%; /* Tamaño de fuente similar al original */
+  font-style: italic; /* Estilo de fuente similar al original */
+  line-height: 1.6; /* Mejorar legibilidad */
+  margin-bottom: 15px; /* Espacio debajo del texto */
+}
+
+.project-description h4 {
+  margin-top: 3%; /* Margen superior similar al original */
+  margin-bottom: 10px; /* Espacio debajo del subtítulo */
+  color: rgb(96, 0, 186);
+}
+
+.project-description .skills-icons {
+  display: block; /* Asegura que no se comporte como flex y permita inline-block */
+  /* flex-wrap: wrap; se elimina porque display: block ya maneja el flujo */
+}
+
+.project-description .skills-icons .icon-img {
+  width: 30px; /* Ancho fijo */
+  height: 30px; /* Alto fijo */
+  max-width: 40px; /* Asegura que no crezca más allá de 20px */
+  max-height: 40px; /* Asegura que no crezca más allá de 20px */
+  display: inline-block; /* Muestra como elemento en línea con propiedades de bloque */
+  margin-right: 8px; /* Margen derecho para separación entre iconos */
+  vertical-align: middle; /* Alinea verticalmente los iconos con el texto si lo hubiera */
+  object-fit: contain; /* Asegura que el contenido de la imagen se ajuste dentro de los límites */
+}
+
+/* Estilos para los botones de navegación del carrusel (flechas) */
+.carousel-control-prev,
+.carousel-control-next {
+  position: static; /* Elimina el posicionamiento absoluto de Bootstrap */
+  width: 60px; /* Ancho fijo para el "agujero" */
+  height: 60px; /* Alto fijo para el "agujero" */
+  opacity: 1;
+  margin: 0 10px; /* Añade margen a los lados para separarlos del carrusel */
+  padding: 0; /* Elimina padding predeterminado */
+  /* Eliminado background-color, border, box-shadow, backdrop-filter, border-radius */
+  display: flex; /* Para centrar el icono dentro */
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease; /* Transición suave para el hover */
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+ filter: invert(1);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  /* Eliminado background-image: none; para permitir las flechas SVG de Bootstrap */
+  width: 40px; /* Tamaño del área del icono personalizado, similar a tu original */
+  height: 70px; /* Tamaño del área del icono personalizado, similar a tu original */
+  background-size: cover;
+  display: block; /* Asegura que el tamaño se aplique */
+  transition: filter 0.3s ease; /* Suaviza el cambio de color en hover */
+}
+
+
+.carousel-indicators {
+  position: static; /* Elimina el posicionamiento absoluto de Bootstrap */
+  margin: 0; /* Elimina márgenes predeterminados */
+  padding: 1rem; /* Elimina padding predeterminado */
+  display: flex; /* Para centrar los botones dentro */
+  justify-content: center; /* Centra los botones */
+}
+
+.carousel-indicators [data-bs-target] {
+  width: 3em; /* Puntos más anchos, similar a tu .dot original */
+  height: 0.5em; /* Puntos más altos, similar a tu .dot original */
+  margin: 0.2em 0.5em; /* Espacio entre puntos, similar a tu .dot original */
+  background-color: rgb(72, 7, 141); /* Color similar a tu .dot original */
+  opacity: 0.5; /* Opacidad para los dots no activos */
+  transition: all 0.3s ease;
+  border: none; /* Eliminar el borde predeterminado de Bootstrap */
+}
+
+.carousel-indicators .active {
+  background-image: linear-gradient(45deg, rgb(114, 7, 141), rgb(243, 163, 35)); /* Degradado para el activo */
+  transform: scale(1.1); /* Ligeramente más grande cuando está activo */
+  opacity: 1; /* Opacidad completa para el dot activo */
+}
+
+/* SECCIÓN SKILLS GENERAL */
 #skills {
   display: flex;
-  flex-flow: column;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+
 #skills .text-container {
   margin-top: 6%;
   margin-bottom: 2%;
   width: 100%;
-  padding: 1%;
-  backdrop-filter: blur(90px);
+  padding: 1rem 2rem;
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 8px 20px rgba(0, 0, 0, 0.15);
   display: flex;
-  flex-flow: column;
+  flex-direction: column;
   align-items: center;
 }
+
 #skills .text-container .title {
-  background: url("./public/Light\ Mode.gif") repeat center bottom fixed;
-  background-attachment: fixed;
-  background-repeat: repeat;
+  background: url("./public/Light Mode.gif") repeat center bottom fixed;
   background-size: cover;
-  background-position-y: top;
+  background-attachment: fixed;
   background-clip: text;
-
-  color: transparent;
-  text-shadow: #6733035e 0 0 0;
-
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: transparent;
+  text-shadow: #6733035e 0 0 0;
 }
-#skills .container  {
+
+/* CONTENEDOR DE CARDS DE SKILLS */
+#skills .container {
   width: 100%;
   display: flex;
-  flex-flow: row wrap;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
+
+/* CADA CARD DE SKILL VISUAL */
 #skills .container .card {
-  margin: 2%;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  margin: 1rem;
   display: flex;
-  flex-flow: column;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+
 #skills .container .card .icon-img {
   width: auto;
-  height: 70px; /* Alto deseado */
-  box-sizing: border-box;
+  height: 70px;
+  object-fit: contain;
 }
+
+#skills .container .card:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
 #skills .container .card h2 {
-  font-size: 100%;
+  font-size: 1rem;
   color: #370994;
+  margin-top: 0.5rem;
 }
+
+/* BOTÓN PARA ACTIVAR EL JUEGO */
+#skills #toggleButton {
+  background-color: #4caf4fd2;
+  border: none;
+  color: rgb(72, 7, 141);
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1rem;
+  margin: 1rem 0;
+  cursor: pointer;
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* POPUP DE GANADOR */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup.hidden {
+  display: none;
+}
+
+.popup-content {
+  background-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  color: #fff;
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.2),
+    0 8px 30px rgba(0, 0, 0, 0.3);
+  max-width: 90%;
+  width: 300px;
+}
+
+.popup-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #ffe44d;
+}
+
+.popup-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+#popup-close {
+  background-color: #4caf4f;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#popup-close:hover {
+  background-color: #43a047;
+}
+
+/* CONTENEDOR DEL JUEGO */
+#memory-game-container {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+#memory-game-container.active {
+  display: flex;
+}
+
 #skills #stats {
   color: #370994;
-  padding: 0.5rem;
-  text-align: center;
-  width: 100%;
   font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
+
+/* JUEGO DE MEMORIA */
 #skills #memory-game {
-  max-height: 100vh;
-  max-height: 600px;
   display: flex;
-  flex-direction: column wrap;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: center;
+  gap: 1rem;
 }
+
+/* ESTILO BASE DE CADA CARD */
 #skills #memory-game .card {
   width: 90px;
   height: 90px;
-  margin: 0.5rem;
+  perspective: 1000px;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
   position: relative;
   transform-style: preserve-3d;
-transition-duration: 0.5s;
+  transition: transform 0.5s ease;
 }
+
+/* GIRO */
 #skills #memory-game .card.active {
   transform: rotateY(180deg);
 }
-#skills #memory-game .card div {
+
+/* CARAS DE LA CARD */
+#skills #memory-game .card .face,
+#skills #memory-game .card .back {
   width: 100%;
   height: 100%;
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
   backface-visibility: hidden;
-  pointer-events: none;
+  background-color: transparent !important;
+  border: none !important;
 }
+
+/* CARA DELANTERA (imagen o texto) */
 #skills #memory-game .card .face {
-  transform-style: preserve-3d;
   transform: rotateY(180deg);
+  font-size: 0.9rem;
   color: rgb(72, 7, 141);
-  font-size: 100%;
+  text-align: center;
+  padding: 0.3rem;
 }
+
 #skills #memory-game .card .face img {
   max-height: 100%;
   max-width: 100%;
+  object-fit: contain;
 }
+
+/* CARA TRASERA (blur para el reverso) */
+#skills #memory-game .card .back {
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* OCULTAR TEXTO INTERNO */
 #skills #memory-game .card .face .hidden {
   display: none;
 }
-#skills #memory-game .card .back {
-backdrop-filter: blur(90px);
+
+#resetButton {
+  background-color: #c44545d2;
+  border: none;
+  color: white;
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
-#skills #toggleButton {
-  background-color: #4caf4fd2; /* Color de fondo */
-  border: none; /* Sin borde */
-  color: rgb(72, 7, 141); /* Color del texto */
-  width: 100%;
-  padding: 1%; /* Espacio alrededor del texto */
-  text-align: center; /* Alinear el texto al centro */
-  text-decoration: none; /* Sin subrayado */
-  display: inline-block; /* Mostrar como bloque en línea */
-  justify-content: center;
-  font-size: 16px; /* Tamaño de fuente */
-  margin: 4px 2px; /* Margen entre botones */
-  cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+
+#resetButton:hover {
+  background-color: #b03030;
+  transform: scale(1.05);
 }
+
 
 #contact {
   display: flex;
@@ -557,6 +924,10 @@ backdrop-filter: blur(90px);
   display: flex;
   flex-flow: column;
   align-items: center;
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 #contact .text-container .contact-title {
   background: url("./public/Light\ Mode.gif") repeat center bottom fixed;
@@ -657,16 +1028,16 @@ backdrop-filter: blur(90px);
     position: sticky;
   }
   #home .container .presentation h1 {
-    font-size: 250%;
+    font-size: 10vw; /* Ajustado para móvil */
     margin-bottom: 10%;
   }
   #home .container .presentation h2 {
-    font-size: 150%;
+    font-size: 6vw; /* Ajustado para móvil */
     padding: 1%;
     margin-bottom: 5%;
   }
   #home .container .presentation h2:hover {
-    font-size: 150%;
+    font-size: 6vw; /* Ajustado para móvil */
     margin-bottom: 5%;
   }
   #home .container .presentation p {
@@ -709,21 +1080,39 @@ backdrop-filter: blur(90px);
     padding-bottom: 5%;
   }
 
-  #projects .carrousel {
+  #projects .carrousel { /* Eliminado, ya no se usa con Bootstrap */
     width: 100%;
   }
-  #projects .carrousel .big .card{
+  #projects .carrousel .big .card{ /* Eliminado, ya no se usa con Bootstrap */
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
-  #projects .carrousel .big .card a{
+  #projects .carrousel .big .card a{ /* Eliminado, ya no se usa con Bootstrap */
     width: 100%;
   }
-  #projects .carrousel .big .card .description {
+  #projects .carrousel .big .card .description { /* Eliminado, ya no se usa con Bootstrap */
     width: 100%;
+  }
+
+  /* Estilos responsivos para el carrusel de Bootstrap */
+  .project-card {
+    flex-direction: column; /* Apila imagen y descripción en tabletas y móviles */
+  }
+  .project-image-wrapper,
+  .project-description {
+    width: 100%; /* Ocupan todo el ancho en tabletas y móviles */
+  }
+  .project-image-wrapper img {
+    height: 200px; /* Reducido el tamaño de la imagen en móvil */
+  }
+  .project-description {
+    padding: 1rem; /* Menos padding en móvil */
+  }
+  .project-description .skills-icons .icon-img {
+    height: 20px; /* Reducido el tamaño de los iconos en móvil */
   }
 
   #skills #memory-game .card {
@@ -753,8 +1142,13 @@ backdrop-filter: blur(90px);
   #aboutme .text-title-container {
     margin-top: 6%;}
 
-  #projects .carrouseldirec .carrousel .big .card .description .icon-img {
-    height: 35px;}
+  /* Estilos para pantallas grandes del carrusel */
+  #projects .project-image-wrapper img {
+    height: 450px; /* Ajustado el tamaño de la imagen en pantallas grandes */
+  }
+  .project-description .skills-icons .icon-img {
+    height: 25px; /* Ajustado el tamaño de los iconos en pantallas grandes */
+  }
 
   #skills #memory-game .card {
    width: 130px;
@@ -780,8 +1174,13 @@ backdrop-filter: blur(90px);
   #aboutme .text-title-container {
     margin-top: 6%;}
 
-  #projects .carrouseldirec .carrousel .big .card .description .icon-img {
-    height: 40px;}
+  /* Estilos para pantallas ultra-grandes del carrusel */
+  #projects .project-image-wrapper img {
+    height: 550px; /* Ajustado el tamaño de la imagen en pantallas ultra-grandes */
+  }
+  .project-description .skills-icons .icon-img {
+    height: 30px; /* Ajustado el tamaño de los iconos en pantallas ultra-grandes */
+  }
 
   #skills #memory-game .card {
    width: 170px;

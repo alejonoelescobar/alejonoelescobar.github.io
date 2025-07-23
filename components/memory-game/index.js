@@ -1,138 +1,125 @@
 // Variables
-const totalCards = 30;
-let cards = [];
+const totalPairs = 20;
 let selectedCards = [];
-let valuesUsed = [];
 let currentMove = 0;
-currentAttempts = 0;
+let currentAttempts = 0;
 
-let skillsUsed = [
-  "Jest",
-  "Python",
-  "Git",
-  "PostgreSQL",
-  "Cloudinary",
-  "Tailwind",
-  "HTML",
-  "CSS",
-  "Next",
-  "Node.js",
-  "React",
-  "Redux",
-  "MongoDB",
-  "Typescript",
-  "Javascript",
-];
-let imagesUsed = [
-  "jest.png",
-  "Python.png",
-  "github.png",
-  "PostgreSQL.png",
-  "Cloudinary.png",
-  "Tailwind.png",
-  "HTML.png",
-  "CSS.png",
-  "Next.js.png",
-  "Node.js.png",
-  "React.png",
-  "Redux.png",
-  "MongoDB.png",
-  "Typescrypt.png",
-  "JavaScript.png",
+const skillsUsed = [
+  "Jest", "Python", "Git", "PostgreSQL", "Cloudinary", "Tailwind",
+  "HTML", "CSS", "Next", "Node.js", "React", "Redux",
+  "MongoDB", "Typescript", "Javascript", "Illustrator", "Photoshop", "Canva", "After Effects", "Premiere Pro"
 ];
 
-let cardtemplate =
-  '<div class="card"><div class="back"></div><div class="face"></div></div>';
+const imagesUsed = [
+  "jest.png", "Python.png", "github.png", "PostgreSQL.png", "Cloudinary.png", "Tailwind.png",
+  "HTML.png", "CSS.png", "Next.js.png", "Node.js.png", "React.png", "Redux.png",
+  "MongoDB.png", "Typescrypt.png", "JavaScript.png", "Illustrator.png", "Photoshop.png", "Canva.png", "After-effects.png", "PremierePro.png"
+];
 
+// Crear una carta (imagen o texto) con el nombre de la skill
+const createCard = (content, skillName) => {
+  const card = document.createElement("div");
+  card.classList.add("card");
+  card.setAttribute("data-skill", skillName);
 
+  const back = document.createElement("div");
+  back.classList.add("back");
+
+  const face = document.createElement("div");
+  face.classList.add("face");
+  face.innerHTML = content;
+
+  card.appendChild(back);
+  card.appendChild(face);
+
+  card.addEventListener("click", activate);
+  return card;
+};
+
+// Lógica al hacer clic en una carta
 function activate(e) {
-    if (currentMove < 2) {
-        if ((!selectedCards[0] || selectedCards[0] !== e.target) && !e.target.classList.contains('active')) {
-            e.target.classList.add('active');
-            selectedCards.push(e.target);
+  const card = e.currentTarget;
 
-            if (++currentMove == 2) {
-                currentAttempts++;
-                document.querySelector('#stats').innerHTML = currentAttempts + ' intentos';
+  if (currentMove < 2 && !card.classList.contains('active') && !selectedCards.includes(card)) {
+    card.classList.add('active');
+    selectedCards.push(card);
+    currentMove++;
 
-                const text1Element = selectedCards[0].querySelector('.hidden');
-                const text2Element = selectedCards[1].querySelector('.hidden');
+    if (currentMove === 2) {
+      currentAttempts++;
+      document.getElementById("stats").innerText = `${currentAttempts} attempts`;
 
-                if (text1Element && text2Element) {
-                    const text1 = text1Element.innerText.trim();
-                    const text2 = text2Element.innerText.trim();
+      const skill1 = selectedCards[0].getAttribute("data-skill");
+      const skill2 = selectedCards[1].getAttribute("data-skill");
 
-                    if (text1 === text2) {
-                        selectedCards = [];
-                        currentMove = 0;
-                    } else {
-                        setTimeout(() => {
-                            selectedCards[0].classList.remove('active');
-                            selectedCards[1].classList.remove('active');
-                            selectedCards = [];
-                            currentMove = 0;
-                        }, 600);
-                    }
-                } else {
-                    console.error('Error: Element with class .hidden not found in selected cards');
-                }
-            }
+      if (skill1 === skill2) {
+        selectedCards = [];
+        currentMove = 0;
+
+        const allActive = document.querySelectorAll(".card.active").length;
+        if (allActive === totalPairs * 2) {
+          setTimeout(() => {
+            document.getElementById("win-popup").classList.remove("hidden");
+          }, 300);
         }
+      } else {
+        setTimeout(() => {
+          selectedCards[0].classList.remove("active");
+          selectedCards[1].classList.remove("active");
+          selectedCards = [];
+          currentMove = 0;
+        }, 600);
+      }
     }
+  }
 }
 
-for (let i = 0; i < totalCards; i++) {
-  let div = document.createElement("div");
-  div.innerHTML = cardtemplate;
-  cards.push(div);
-  document.querySelector("#memory-game").append(cards[i]);
-  if (i < 15) {
-    // Agerega las imagenes de las primeras 15 cartas con imágenes
-    cards[i].querySelectorAll(
-      ".face"
-    )[0].innerHTML = `<img src="./public/icons/${imagesUsed[i]}" alt="${skillsUsed[i]}">`;
-  } else {
-    // Agrega los textos de las últimas 15 cartas con texto
-    let index = i - 15;
-    cards[i].querySelectorAll(
-      ".face"
-    )[0].innerHTML = `<div class="hidden" id="${skillsUsed[index]}">${skillsUsed[index]}</div>`;
+// Renderizar todas las cartas
+function renderCards() {
+  const memoryGame = document.getElementById("memory-game");
+  memoryGame.innerHTML = "";
+  const allCards = [];
+
+  for (let i = 0; i < totalPairs; i++) {
+    const skill = skillsUsed[i];
+
+    const imgCard = createCard(
+      `<img src="./public/icons/${imagesUsed[i]}" alt="${skill}" />`,
+      skill
+    );
+
+    const textCard = createCard(
+      `<div class="hidden">${skill}</div>${skill}`,
+      skill
+    );
+
+    allCards.push(imgCard, textCard);
   }
 
-  cards[i].querySelectorAll(".card")[0].addEventListener("click", activate);
+  shuffle(allCards).forEach(card => memoryGame.appendChild(card));
 }
 
-// Renderiza las cards con imagenes
-for (let i = 0; i < 15; i++) {
-  let div = document.createElement("div");
-  div.innerHTML = cardtemplate;
-  cards.push(div);
-  document.querySelector("#memory-game").append(cards[i]);
-  cards[i].querySelectorAll(
-    ".face"
-  )[0].innerHTML = `<div class="hidden" id=${skillsUsed[i]}>${skillsUsed[i]}</div ><img src="./public/icons/${imagesUsed[i]}", alt= "${skillsUsed[i]}">`;
-  cards[i].querySelectorAll(".card")[0].addEventListener("click", activate);
+// Mezclar array
+function shuffle(array) {
+  return array.sort(() => Math.random() - 0.5);
 }
 
-// Renderiza las cards con textos
-for (let i = 0; i < 15; i++) {
-  let index = i + 15;
-  let div = document.createElement("div");
-  div.innerHTML = cardtemplate;
-  cards.push(div);
-  document.querySelector("#memory-game").append(cards[index]);
-  cards[index].querySelectorAll(
-    ".face"
-  )[0].innerHTML = `<div class="hidden" id=${skillsUsed[i]}>${skillsUsed[i]}</div >${skillsUsed[i]}`;
-  cards[index].querySelectorAll(".card")[0].addEventListener("click", activate);
-}
+// Al cargar el DOM
+document.addEventListener("DOMContentLoaded", () => {
+  renderCards();
 
-// Función para mezclar las cartas
-function shuffleCards() {
-    const container = document.querySelector('#memory-game');
-    for (let i = container.children.length; i >= 0; i--) {
-        container.appendChild(container.children[Math.random() * i | 0]);
-    }
-}
+  // Cierra el popup
+  document.getElementById("popup-close").addEventListener("click", () => {
+    document.getElementById("win-popup").classList.add("hidden");
+  });
 
-shuffleCards()
+  // Botón de reinicio
+  document.getElementById("resetButton").addEventListener("click", () => {
+    currentAttempts = 0;
+    currentMove = 0;
+    selectedCards = [];
+    document.getElementById("stats").innerText = `${currentAttempts} attempts`;
+    renderCards();
+    document.getElementById("win-popup").classList.add("hidden");
+  });
+});
