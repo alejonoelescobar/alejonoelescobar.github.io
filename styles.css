@@ -137,12 +137,16 @@ html {
   padding: 3%;
   margin-bottom: 0%;
   font-style: italic;
-  backdrop-filter: blur(7px);
+  backdrop-filter: blur(2px);
   text-align: center;
   display: block;
   margin: auto;
   margin-top: 1rem;
-  background-color: #49260b00;
+  background-image: linear-gradient(
+    0deg,
+    rgba(72, 7, 141, 0.248),
+    rgba(243, 163, 35, 0.849)
+  );
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 #home .carousel3d-container {
@@ -645,7 +649,6 @@ html {
   color: transparent;
   text-shadow: #6733035e 0 0 0;
 }
-/* CONTENEDOR DE CARDS DE SKILLS */
 #skills .container {
   width: 100%;
   display: flex;
@@ -653,7 +656,6 @@ html {
   justify-content: center;
   align-items: center;
 }
-/* CADA CARD DE SKILL VISUAL */
 #skills .container .card {
   background-color: transparent !important;
   box-shadow: none !important;
@@ -678,7 +680,6 @@ html {
   color: #370994;
   margin-top: 0.5rem;
 }
-/* BOTÓN PARA ACTIVAR EL JUEGO */
 #skills #toggleButton {
   background-color: #4caf4fd2;
   border: none;
@@ -756,14 +757,12 @@ html {
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
-/* JUEGO DE MEMORIA */
 #skills #memory-game {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
 }
-/* ESTILO BASE DE CADA CARD */
 #skills #memory-game .card {
   width: 90px;
   height: 90px;
@@ -775,11 +774,9 @@ html {
   transform-style: preserve-3d;
   transition: transform 0.5s ease;
 }
-/* GIRO */
 #skills #memory-game .card.active {
   transform: rotateY(180deg);
 }
-/* CARAS DE LA CARD */
 #skills #memory-game .card .face,
 #skills #memory-game .card .back {
   width: 100%;
@@ -792,7 +789,6 @@ html {
   background-color: transparent !important;
   border: none !important;
 }
-/* CARA DELANTERA (imagen o texto) */
 #skills #memory-game .card .face {
   transform: rotateY(180deg);
   font-size: 0.9rem;
@@ -805,12 +801,10 @@ html {
   max-width: 100%;
   object-fit: contain;
 }
-/* CARA TRASERA (blur para el reverso) */
 #skills #memory-game .card .back {
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.15);
 }
-/* OCULTAR TEXTO INTERNO */
 #skills #memory-game .card .face .hidden {
   display: none;
 }
@@ -1219,7 +1213,6 @@ html {
     text-align: center;
   }
 
-
   /* SECCION CONTACT */
   #contact .contact-container {
     flex-direction: column;
@@ -1250,73 +1243,229 @@ html {
   }
 }
 
-@media screen and (min-width: 1700px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   html {
     font-size: 160%;
   }
 
-  #home .container .presentation h2 {
-    margin-top: 12%;
+  /* SECCION HOME */
+  #home {
+    height: auto;
+    flex-direction: column;
+  }
+  #home .home-wrapper {
+    flex-direction: column;
+    display: flex;
+    height: auto;
+    padding: 2rem 5%;
+    margin-top: 4rem;
+  }
+  #home .presentation {
+    flex: none;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #home .presentation h1 {
+    font-size: 4.5vh;
+    text-align: center;
+  }
+  #home .presentation h2 {
+    font-size: 3.5vh;
+    text-align: center;
+  }
+  #home .presentation p {
+    display: block;
+    font-size: 2vh;
+    text-align: center;
+    margin: 1rem 2rem;
+  }
+  #home .presentation a {
+    font-size: 1.8vh;
+  }
+  #home .carousel3d-container {
+    flex: none;
+    width: 100%;
+    height: 40vh;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+  #home .carousel3d {
+    width: 90%;
+    height: 100%;
+    position: relative;
+  }
+  #home .carousel3d img {
+    max-width: 80%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 1s ease, opacity 1s ease, z-index 0.8s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  #home .carousel3d img.active {
+    opacity: 1;
+    z-index: 10;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  #home .carousel3d img.prev {
+    opacity: 0.5;
+    transform: translate(-90%, -50%) scale(0.7);
+    z-index: 1;
+  }
+  #home .carousel3d img.next {
+    opacity: 0.5;
+    transform: translate(-10%, -50%) scale(0.7);
+    z-index: 1;
   }
 
+  /* SECCION DESIGN GALLERY */
+  #design-gallery {
+    padding: 4% 0%;
+  }
+  #design-gallery .gallery-title {
+    font-size: 2.5rem; /* Un poco más pequeño que desktop */
+    padding-bottom: 3%;
+    text-align: center;
+  }
+  #design-gallery .modal-content {
+    display: flex;
+    max-width: 700px;
+    padding: 1.5rem;
+    gap: 1rem;
+    flex-direction: row;
+    flex-wrap: wrap; /* En caso de que el contenido sea alto */
+  }
+  #design-gallery .modal-media {
+    flex: 1 1 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #design-gallery .modal-media video {
+    max-width: 100%;
+    height: auto;
+  }
+  #design-gallery .modal-description {
+    flex: 1 1 50%;
+  }
+  #design-gallery .modal-description p {
+    display: block;
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+  #design-gallery .modal-header h2 {
+    margin: 0;
+    font-size: 1rem;
+    color: white;
+  }
+  #design-gallery .modal-close {
+    display: none;
+  }
+
+  /* SECCION PROJECTS */
+  .project-card {
+    flex-direction: column;
+  }
+  .project-image-wrapper,
+  .project-description {
+    width: 100%;
+  }
+  .carousel-control-prev,
+  .carousel-control-next {
+    display: none;
+  }
+
+  /* SECCION SKILLS */
+  #skills {
+    padding-top: 2rem;
+  }
+  #skills .container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columnas */
+    grid-auto-rows: auto;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  #skills .container .card {
+    margin: 0;
+    padding: 0.5rem;
+  }
+  #skills .container .card .icon-img {
+   height: 80px;
+   width: auto;
+  }
+  #skills .container .card h2 {
+    font-size: 0.75rem;
+  }
+  .popup-content {
+    width: 80%;
+  }
+
+  /* SECCION ABOUT ME */
   #aboutme {
-    padding-top: 0%;
+    margin-top: 3rem;
     height: auto;
   }
   #aboutme .text-title-container {
     margin-top: 6%;
   }
-
-  /* Estilos para pantallas grandes del carrusel */
-  #projects .project-image-wrapper img {
-    height: 450px; /* Ajustado el tamaño de la imagen en pantallas grandes */
+  #aboutme .aboutme-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 1.5rem;
+    text-align: left;
+    gap: 1rem;
   }
-  .project-description .skills-icons .icon-img {
-    height: 25px; /* Ajustado el tamaño de los iconos en pantallas grandes */
+  #aboutme .image-container {
+    max-width: 35%;
+    padding: 1rem;
+    margin: 0 auto;
   }
-
-  #skills #memory-game .card {
-    width: 130px;
-    height: 130px;
+  #aboutme .text-container {
+    width: 60%;
+    padding: 1rem;
+    margin: 0 auto;
+    text-align: left;
   }
-  #skills #toggleButton {
-    font-size: 100%;
-    margin-top: 1%;
+  #aboutme .text-container h4 {
+    font-size: 1rem;
+    padding-bottom: 1rem;
   }
-}
-
-@media screen and (min-width: 2048px) {
-  html {
-    font-size: 200%;
-  }
-
-  #home .container .presentation h2 {
-    margin-top: 12%;
-  }
-
-  #aboutme {
-    margin-top: 0%;
-    padding-top: 0%;
-    height: auto;
-  }
-  #aboutme .text-title-container {
-    margin-top: 6%;
+  #aboutme .text-container a {
+    font-size: 1rem;
+    text-align: left;
   }
 
-  /* Estilos para pantallas ultra-grandes del carrusel */
-  #projects .project-image-wrapper img {
-    height: 550px; /* Ajustado el tamaño de la imagen en pantallas ultra-grandes */
+  /* SECCION CONTACT */
+  #contact .contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    padding: 1rem;
   }
-  .project-description .skills-icons .icon-img {
-    height: 30px; /* Ajustado el tamaño de los iconos en pantallas ultra-grandes */
+  #contact .contact-container .columns {
+    display: contents; /* Aplana el contenedor, como si no existiera */
   }
-
-  #skills #memory-game .card {
-    width: 170px;
-    height: 170px;
+  #contact .contact-container a {
+    justify-content: flex-start;
+    font-size: .8rem;
+    gap: 1rem;
   }
-  #skills #toggleButton {
-    font-size: 100%;
-    margin-top: 1%;
+  #contact .contact-container a i {
+    font-size: 1.2rem;
+  }
+  #contact .text-container .contact-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 3%;
   }
 }
