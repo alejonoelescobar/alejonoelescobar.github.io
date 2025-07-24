@@ -64,96 +64,136 @@ html {
   color: transparent;
 }
 
+/* HOME */
 #home {
-  height: 100vh; /* Asegura que ocupe el 100% de la altura de la vista */
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#home .home-wrapper {
+  display: flex;
+  width: 100%;
+  height: 70vh;
+  padding: 0 5%;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
 }
 #home .container {
   position: relative; /* Posición relativa para que los elementos internos puedan posicionarse con respecto a este */
   z-index: 1; /* Colocar el contenido sobre el video */
 }
-#home .container .presentation {
-  /* backdrop-filter: blur(10px); */
-  /* background-color: #cfcfcf; */
-  /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5); */
-  width: 100%vh;
-  height: 100%;
-  margin-bottom: 1rem;
-  margin-left: 2%;
-  margin-right: 2%;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+#home .presentation {
+  flex: 1;
+  margin-right: 3%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  align-items: center;
 }
-#home .container .presentation h1 {
-  background: url("./public/background/night/Night\ mode.gif") repeat center center fixed;
+#home .presentation h1 {
+  background: url("./public/background/night/Night\ mode.gif") repeat center
+    center fixed;
   background-attachment: fixed;
   background-repeat: repeat-x;
   background-size: cover;
   background-position: top;
   background-clip: text;
 
-  font-size: 8vw; /* Ajustado a vw para mejor responsividad */
+  font-size: 4.5vw; /* Ajustado a vw para mejor responsividad */
   font-style: italic;
   color: transparent;
   margin-top: -2rem;
+  margin-top: 1%;
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
-#home .container .presentation h2 {
+#home .presentation h2 {
   color: antiquewhite;
-  font-size: 4vw; /* Ajustado a vw para mejor responsividad */
   font-style: normal;
-  transition: 5s;
   margin-top: 9%;
-}
-#home .container .presentation .webdev{
+  font-size: 3vw;
   margin-top: -1%;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
-#home .container .presentation h2:hover {
-  background: url("./public/Nigth\ mode.gif") repeat center top fixed;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position-y: center;
-  background-clip: text;
-
-  font-size: 4vw; /* Ajustado a vw para mejor responsividad */
+#home .presentation h2:hover {
+  font-size: 2.5vw;
   color: transparent;
   text-shadow: #673303 0 0 0em;
-
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  /* text-shadow: #fff311 0 1px 0,
-  #fff311 0 2px 0,
-  #673303 0 3px 0,
-  #673303 0 4px 0,
-  #673303 0 5px 0; */
 }
-#home .container .presentation p {
+#home .presentation p {
   color: #3e1e00;
-  font-size: 100%;
+  font-size: 1.5vw;
   font-style: normal;
   margin-left: 1rem;
   margin-right: 1rem;
   text-align: center;
 }
-#home .container a {
+#home a {
   text-decoration: none;
   color: rgb(72, 7, 141);
-  padding-top: 2%;
-  padding-bottom: 0%;
+  padding: 3%;
   margin-bottom: 0%;
   font-style: italic;
+  backdrop-filter: blur(7px);
+  text-align: center;
+  display: block;
+  margin: auto;
+  margin-top: 1rem;
+  background-color: #49260b00;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+#home .carousel3d-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  height: 100%; /* importante */
+  min-height: 300px; /* altura mínima para que se vea en móviles */
+}
+#home .carousel3d {
+  position: relative;
+  width: 80%;
+  height: 80%;
+}
+#home .carousel3d img {
+  position: absolute;
+  max-width: 80%;
+  height: 100%;
+  transition: transform 1s ease, opacity 1s ease, z-index 0.8s ease;
+  opacity: 0;
+  pointer-events: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#home .carousel3d img.active {
+  opacity: 1;
+  height: 100%;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 10;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+#home .carousel3d img.prev {
+  opacity: 0.5;
+  transform: translate(-90%, -50%) scale(0.5);
+  z-index: 2;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+#home .carousel3d img.next {
+  opacity: 0.5;
+  transform: translate(-10%, -50%) scale(0.5);
+  z-index: 2;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 #aboutme {
-  height: 100vh;
+  height: 100%;
+  padding-top: 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -167,28 +207,23 @@ html {
   align-items: center;
   justify-content: center;
   padding-top: 1rem;
-  box-shadow:
-    0 4px 6px rgba(0, 0, 0, 0.1),
-    0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 #aboutme .image-container {
   max-width: 20%;
   height: auto;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  margin-right: 7%;
+  padding: 2rem;
 }
 #aboutme .image-container img {
   width: 100%;
   height: 100%;
 }
-
 #aboutme .text-container {
   max-width: 100%;
   height: auto;
   margin-top: 2%;
   margin-bottom: 2%;
-  width: 100%;
+  width: 60%;
   padding: 1%;
   backdrop-filter: blur(90px);
   display: flex;
@@ -206,9 +241,7 @@ html {
   display: flex;
   flex-flow: column;
   align-items: center;
-  box-shadow:
-    0 4px 6px rgba(0, 0, 0, 0.1),
-    0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 #aboutme .text-container-aboutme .title {
   background: url("./public/Light\ Mode.gif") repeat center bottom fixed;
@@ -229,7 +262,7 @@ html {
   color: #49260b;
   padding-bottom: 2%;
 }
-#aboutme .text-container h4 span { 
+#aboutme .text-container h4 span {
   color: rgb(72, 7, 141);
 }
 #aboutme .text-container a {
@@ -239,15 +272,9 @@ html {
   text-align: center; /* Centrar el texto horizontalmente */
   display: block; /* Convertir el enlace en un bloque para centrar verticalmente */
   margin: auto; /* Centrar verticalmente */
-
 }
 
-
-
-
-
-
-
+/* Design Portfolio Gallery */
 #design-gallery {
   margin: auto;
   width: 100%;
@@ -258,7 +285,6 @@ html {
   justify-content: center;
   padding-top: 2rem;
 }
-
 #design-gallery .text-container {
   margin-top: 3%;
   margin-bottom: 2%;
@@ -268,11 +294,9 @@ html {
   display: flex;
   flex-flow: column;
   align-items: center;
-  box-shadow:
-    0 4px 6px rgba(0, 0, 0, 0.1),
-    0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.15);
 }
-#design-gallery .text-container .title{
+#design-gallery .text-container .title {
   background: url("./public/Light\ Mode.gif") repeat center bottom fixed;
   background-attachment: fixed;
   background-repeat: repeat;
@@ -286,7 +310,6 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 #design-gallery .gallery-container {
   display: flex;
   max-width: 95%;
@@ -294,22 +317,17 @@ html {
   justify-content: center; /* Centra las imágenes horizontalmente */
   gap: 20px; /* Espaciado entre las imágenes */
 }
-
 #design-gallery .gallery-item {
   max-width: 100%;
   backdrop-filter: blur(90px);
   text-align: center; /* Centra el texto debajo de la imagen */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow:
-  0 4px 6px rgba(0, 0, 0, 0.1),
-  0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.15);
 }
-
 #design-gallery .gallery-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
-
 #design-gallery .gallery-item img {
   max-height: 400px; /* Fija la altura máxima */
   width: auto; /* Mantiene la proporción de las imágenes */
@@ -318,7 +336,6 @@ html {
   margin: 0 auto; /* Centra la imagen dentro de su contenedor */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
 #design-gallery .gallery-caption {
   display: flex;
   flex-direction: column;
@@ -328,9 +345,8 @@ html {
   font-size: 1rem;
   color: #333;
 }
-
 /* Estilo del modal general */
-.gallery-modal {
+#design-gallery .gallery-modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -344,14 +360,12 @@ html {
   padding: 2rem;
   box-sizing: border-box;
 }
-
 /* Oculta el modal por defecto */
-.gallery-modal.hidden {
+#design-gallery .gallery-modal.hidden {
   display: none;
 }
-
 /* Contenido del modal */
-.modal-content {
+#design-gallery .modal-content {
   color: rgba(255, 255, 255, 0.883);
   max-width: 900px;
   width: 100%;
@@ -363,84 +377,57 @@ html {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(8px);
 }
-
-.modal-gallery {
+#design-gallery .modal-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
 }
-
-
-.open-modal-btn {
+#design-gallery .open-modal-btn {
   margin-top: 10px;
   padding: 6px 12px;
-  background: rgba(255, 255, 255, 0.1);
+  background: #3709947a;
   backdrop-filter: blur(8px);
-  color: #fff;
+  color: #fbde04;
   border: none;
   text-transform: uppercase;
   font-size: 0.8rem;
   cursor: pointer;
   transition: background 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.15);
 }
-
-.open-modal-btn:hover {
+#design-gallery .open-modal-btn:hover {
   background: rgba(255, 255, 255, 0.2);
 }
-
-.open-modal-btn {
-  margin-top: 10px;
-  padding: 6px 12px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
-  color: #333;
-  border: none;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.open-modal-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.modal-description p {
+#design-gallery .modal-description p {
   font-size: 1rem;
   line-height: 1.5;
 }
-
-.modal-close {
+#design-gallery .modal-close {
   align-self: flex-end;
   font-size: 2rem;
   cursor: pointer;
 }
-
 /* Video */
-.modal-media video {
+#design-gallery .modal-media video {
   max-width: 400px;
 }
-
-.tool-icon {
+#design-gallery .tool-icon {
   width: 32px;
   height: 32px;
   object-fit: contain;
 }
-
-.modal-header {
+#design-gallery .modal-header {
   display: flex;
   align-items: center;
   gap: 10px; /* Espacio entre el ícono y el título */
   margin-bottom: 1rem;
 }
-
-.modal-header h2 {
+#design-gallery .modal-header h2 {
   margin: 0;
   font-size: 1.5rem;
   color: white;
 }
-
-.caption-icon-title {
+#design-gallery .caption-icon-title {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -450,21 +437,11 @@ html {
   color: #333;
   text-align: center;
 }
-
-.caption-icon-title .tool-icon {
+#design-gallery .caption-icon-title .tool-icon {
   width: 20px;
   height: 20px;
   object-fit: contain;
 }
-
-
-
-
-
-
-
-
-
 
 #projects {
   margin: auto;
@@ -479,15 +456,13 @@ html {
 #projects .text-container {
   margin-top: 3%;
   margin-bottom: 2%;
-  backdrop-filter: blur(90px);
   width: 100%;
   padding: 1%;
+  backdrop-filter: blur(90px);
   display: flex;
   flex-flow: column;
   align-items: center;
-  box-shadow:
-    0 4px 6px rgba(0, 0, 0, 0.1),
-    0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 #projects .text-container .title {
   background: url("./public/Light\ Mode.gif") repeat center bottom fixed;
@@ -503,7 +478,6 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 /* Nuevo contenedor para el carrusel y los botones de navegación */
 .carousel-main-wrapper {
   display: flex;
@@ -511,24 +485,16 @@ html {
   width: 95%; /* Ancho del contenedor principal del carrusel y botones */
   max-width: 120em;
   margin: 20px auto; /* Centrar y dar margen */
-  /* Eliminado box-shadow, background-color, backdrop-filter, border-radius de aquí */
 }
-
 /* Estilos para el contenedor del carrusel de Bootstrap (solo el carrusel en sí) */
 #carouselExampleIndicators {
   flex-grow: 1; /* Permite que el carrusel ocupe el espacio disponible entre los botones */
   height: auto; /* Altura automática para adaptarse al contenido */
   border-radius: 0; /* ELIMINADO: Bordes redondeados */
   overflow: hidden; /* Asegura que el contenido se mantenga dentro de los bordes */
-  box-shadow:
-    0 4px 6px rgba(0, 0, 0, 0.1),
-    0 8px 20px rgba(0, 0, 0, 0.15);
-
-  background-color: rgba(255, 255, 255, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   /* Eliminadas propiedades de margin, box-shadow, background-color, backdrop-filter ya que estaban en .carousel-main-wrapper */
 }
-
 /* Estilos de cada "slide" de proyecto */
 .project-card {
   display: flex; /* Para la distribución de imagen y descripción */
@@ -537,7 +503,6 @@ html {
   border-radius: 0; /* ELIMINADO: Bordes redondeados para la tarjeta */
   overflow: hidden; /* Asegura que la imagen no se desborde */
 }
-
 .project-image-wrapper {
   width: 50%; /* Ocupa la mitad del ancho en escritorio */
   display: flex;
@@ -545,18 +510,18 @@ html {
   justify-content: center;
   overflow: hidden;
 }
-
 .project-image-wrapper img {
   width: 100%;
-  height: 400px; /* Altura fija para las imágenes del proyecto en escritorio */
+  height: 100%; /* Altura fija para las imágenes del proyecto en escritorio */
   object-fit: cover; /* Recorta la imagen para cubrir el área */
   transition: transform 0.3s ease;
 }
-
 .project-image-wrapper img:hover {
   transform: scale(1.05);
 }
-
+.carousel-inner {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.15);
+}
 .project-description {
   width: 50%; /* Ocupa la otra mitad del ancho en escritorio */
   padding: 1rem; /* Padding similar a tu .description original */
@@ -566,13 +531,11 @@ html {
   justify-content: center;
   backdrop-filter: blur(90px);
 }
-
 .project-description h2 {
   /* Mantener los estilos de h2 si los tenías antes, o añadir si es necesario */
   margin-bottom: 15px; /* Espacio debajo del título del proyecto */
   color: rgb(96, 0, 186);
 }
-
 .project-description .card-text {
   color: #3e1e00; /* Color de texto similar al original */
   font-size: 90%; /* Tamaño de fuente similar al original */
@@ -580,18 +543,15 @@ html {
   line-height: 1.6; /* Mejorar legibilidad */
   margin-bottom: 15px; /* Espacio debajo del texto */
 }
-
 .project-description h4 {
   margin-top: 3%; /* Margen superior similar al original */
   margin-bottom: 10px; /* Espacio debajo del subtítulo */
   color: rgb(96, 0, 186);
 }
-
 .project-description .skills-icons {
   display: block; /* Asegura que no se comporte como flex y permita inline-block */
   /* flex-wrap: wrap; se elimina porque display: block ya maneja el flujo */
 }
-
 .project-description .skills-icons .icon-img {
   width: 30px; /* Ancho fijo */
   height: 30px; /* Alto fijo */
@@ -602,7 +562,6 @@ html {
   vertical-align: middle; /* Alinea verticalmente los iconos con el texto si lo hubiera */
   object-fit: contain; /* Asegura que el contenido de la imagen se ajuste dentro de los límites */
 }
-
 /* Estilos para los botones de navegación del carrusel (flechas) */
 .carousel-control-prev,
 .carousel-control-next {
@@ -618,12 +577,10 @@ html {
   justify-content: center;
   transition: background-color 0.3s ease, backdrop-filter 0.3s ease; /* Transición suave para el hover */
 }
-
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
- filter: invert(1);
+  filter: invert(1);
 }
-
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   /* Eliminado background-image: none; para permitir las flechas SVG de Bootstrap */
@@ -633,8 +590,6 @@ html {
   display: block; /* Asegura que el tamaño se aplique */
   transition: filter 0.3s ease; /* Suaviza el cambio de color en hover */
 }
-
-
 .carousel-indicators {
   position: static; /* Elimina el posicionamiento absoluto de Bootstrap */
   margin: 0; /* Elimina márgenes predeterminados */
@@ -642,21 +597,24 @@ html {
   display: flex; /* Para centrar los botones dentro */
   justify-content: center; /* Centra los botones */
 }
-
 .carousel-indicators [data-bs-target] {
   width: 3em; /* Puntos más anchos, similar a tu .dot original */
   height: 0.5em; /* Puntos más altos, similar a tu .dot original */
   margin: 0.2em 0.5em; /* Espacio entre puntos, similar a tu .dot original */
   background-color: rgb(72, 7, 141); /* Color similar a tu .dot original */
-  opacity: 0.5; /* Opacidad para los dots no activos */
+  opacity: 1; /* Opacidad para los dots no activos */
   transition: all 0.3s ease;
   border: none; /* Eliminar el borde predeterminado de Bootstrap */
 }
-
 .carousel-indicators .active {
-  background-image: linear-gradient(45deg, rgb(114, 7, 141), rgb(243, 163, 35)); /* Degradado para el activo */
-  transform: scale(1.1); /* Ligeramente más grande cuando está activo */
+  background-image: linear-gradient(
+    45deg,
+    rgb(72, 7, 141),
+    rgb(243, 163, 35),
+    rgb(72, 7, 141)
+  ); /* Degradado para el activo */
   opacity: 1; /* Opacidad completa para el dot activo */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* SECCIÓN SKILLS GENERAL */
@@ -666,21 +624,17 @@ html {
   align-items: center;
   justify-content: center;
 }
-
 #skills .text-container {
   margin-top: 6%;
   margin-bottom: 2%;
   width: 100%;
   padding: 1rem 2rem;
   backdrop-filter: blur(10px);
-  box-shadow:
-    0 4px 6px rgba(0, 0, 0, 0.1),
-    0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 #skills .text-container .title {
   background: url("./public/Light Mode.gif") repeat center bottom fixed;
   background-size: cover;
@@ -691,7 +645,6 @@ html {
   color: transparent;
   text-shadow: #6733035e 0 0 0;
 }
-
 /* CONTENEDOR DE CARDS DE SKILLS */
 #skills .container {
   width: 100%;
@@ -700,7 +653,6 @@ html {
   justify-content: center;
   align-items: center;
 }
-
 /* CADA CARD DE SKILL VISUAL */
 #skills .container .card {
   background-color: transparent !important;
@@ -712,24 +664,20 @@ html {
   align-items: center;
   justify-content: center;
 }
-
 #skills .container .card .icon-img {
   width: auto;
   height: 70px;
   object-fit: contain;
 }
-
 #skills .container .card:hover {
   transform: scale(1.1);
   transition: transform 0.3s ease;
 }
-
 #skills .container .card h2 {
   font-size: 1rem;
   color: #370994;
   margin-top: 0.5rem;
 }
-
 /* BOTÓN PARA ACTIVAR EL JUEGO */
 #skills #toggleButton {
   background-color: #4caf4fd2;
@@ -741,11 +689,8 @@ html {
   font-size: 1rem;
   margin: 1rem 0;
   cursor: pointer;
-  box-shadow:
-    0 4px 6px rgba(0, 0, 0, 0.1),
-    0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.15);
 }
-
 /* POPUP DE GANADOR */
 .popup {
   position: fixed;
@@ -760,11 +705,9 @@ html {
   align-items: center;
   z-index: 999;
 }
-
 .popup.hidden {
   display: none;
 }
-
 .popup-content {
   background-color: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(20px);
@@ -772,24 +715,19 @@ html {
   padding: 2rem;
   text-align: center;
   color: #fff;
-  box-shadow:
-    0 4px 8px rgba(0, 0, 0, 0.2),
-    0 8px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 8px 30px rgba(0, 0, 0, 0.3);
   max-width: 90%;
   width: 300px;
 }
-
 .popup-content h2 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
   color: #ffe44d;
 }
-
 .popup-content p {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
 }
-
 #popup-close {
   background-color: #4caf4f;
   color: #fff;
@@ -800,11 +738,9 @@ html {
   cursor: pointer;
   transition: background 0.3s ease;
 }
-
 #popup-close:hover {
   background-color: #43a047;
 }
-
 /* CONTENEDOR DEL JUEGO */
 #memory-game-container {
   display: none;
@@ -812,17 +748,14 @@ html {
   align-items: center;
   width: 100%;
 }
-
 #memory-game-container.active {
   display: flex;
 }
-
 #skills #stats {
   color: #370994;
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
-
 /* JUEGO DE MEMORIA */
 #skills #memory-game {
   display: flex;
@@ -830,7 +763,6 @@ html {
   justify-content: center;
   gap: 1rem;
 }
-
 /* ESTILO BASE DE CADA CARD */
 #skills #memory-game .card {
   width: 90px;
@@ -843,12 +775,10 @@ html {
   transform-style: preserve-3d;
   transition: transform 0.5s ease;
 }
-
 /* GIRO */
 #skills #memory-game .card.active {
   transform: rotateY(180deg);
 }
-
 /* CARAS DE LA CARD */
 #skills #memory-game .card .face,
 #skills #memory-game .card .back {
@@ -862,7 +792,6 @@ html {
   background-color: transparent !important;
   border: none !important;
 }
-
 /* CARA DELANTERA (imagen o texto) */
 #skills #memory-game .card .face {
   transform: rotateY(180deg);
@@ -871,26 +800,20 @@ html {
   text-align: center;
   padding: 0.3rem;
 }
-
 #skills #memory-game .card .face img {
   max-height: 100%;
   max-width: 100%;
   object-fit: contain;
 }
-
 /* CARA TRASERA (blur para el reverso) */
 #skills #memory-game .card .back {
   backdrop-filter: blur(10px);
-  box-shadow:
-    0 4px 6px rgba(0, 0, 0, 0.1),
-    0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.15);
 }
-
 /* OCULTAR TEXTO INTERNO */
 #skills #memory-game .card .face .hidden {
   display: none;
 }
-
 #resetButton {
   background-color: #c44545d2;
   border: none;
@@ -901,12 +824,10 @@ html {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-
 #resetButton:hover {
   background-color: #b03030;
   transform: scale(1.05);
 }
-
 
 #contact {
   display: flex;
@@ -924,9 +845,7 @@ html {
   display: flex;
   flex-flow: column;
   align-items: center;
-  box-shadow:
-    0 4px 6px rgba(0, 0, 0, 0.1),
-    0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 #contact .text-container .contact-title {
@@ -961,11 +880,10 @@ html {
 }
 #contact .contact-container a {
   text-decoration: none;
-  color: #673303
-
+  color: #673303;
 }
 #contact .contact-container a:hover {
-  color: #370994
+  color: #370994;
 }
 
 .logo {
@@ -973,10 +891,9 @@ html {
   height: 2.5rem;
 }
 
-@media screen and (max-width: 600px) {
-
+@media screen and (max-width: 767px) {
   #background .video-container {
-    background-image: url('./public/background.png');
+    background-image: url("./public/background.png");
     background-size: cover;
     background-position: center;
   }
@@ -989,7 +906,7 @@ html {
     text-align: right;
   }
   #navbar header #menu {
-    color : #370994;
+    color: #370994;
     display: block;
   }
   #navbar header .header-container nav .responsive {
@@ -1012,135 +929,343 @@ html {
     margin: 5px 0;
   }
 
-  #home .container {
-    display: flex;
-    width: 100%;
-    margin-left: -2%;
+  /* SECCION HOME */
+  #home {
+    height: auto;
+    flex-direction: column;
   }
-  #home .container .presentation {
-    min-width: 100%;
-    height: 100vh;
+  #home .home-wrapper {
+    flex-direction: column;
     display: flex;
-    flex-direction: column ;
+    height: 85vh; /* Asegura el espacio disponible */
+    margin-top: 6rem;
+  }
+  #home .presentation {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #home .presentation h1 {
+    font-size: 4vh;
     text-align: center;
+  }
+  #home .presentation h2 {
+    font-size: 3.5vh;
+  }
+  #home .presentation p {
+    display: none; /* Oculta los párrafos */
+  }
+  #home .presentation a {
+    font-size: 1.5vh;
+  }
+  #home .carousel3d-container {
+    flex: 2;
+    display: flex;
     align-items: center;
     justify-content: center;
-    position: sticky;
+    position: relative;
+    min-height: 200px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
   }
-  #home .container .presentation h1 {
-    font-size: 10vw; /* Ajustado para móvil */
-    margin-bottom: 10%;
+  #home .carousel3d {
+    width: 100%;
+    position: relative;
   }
-  #home .container .presentation h2 {
-    font-size: 6vw; /* Ajustado para móvil */
-    padding: 1%;
-    margin-bottom: 5%;
+  #home .carousel3d img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    max-width: 90%;
+    max-height: 100%; /* 👈 Nuevo: limita la altura según el contenedor */
+    width: auto;
+    height: auto;
+    opacity: 0;
+    transition: transform 1s ease, opacity 1s ease, z-index 0.8s ease;
+    pointer-events: none;
   }
-  #home .container .presentation h2:hover {
-    font-size: 6vw; /* Ajustado para móvil */
-    margin-bottom: 5%;
+  #home .carousel3d img.active {
+    transform: translate(-50%, -50%) scale(1); /* Imagen del centro */
+    opacity: 1;
+    z-index: 10;
   }
-  #home .container .presentation p {
-    font-size: 100%;
+  #home .carousel3d img.prev {
+    transform: translate(-50%, -80%) scale(0.7); /* Imagen de arriba */
   }
-  #home .container .presentation a {
-    font-size: 100%;
+  #home .carousel3d img.next {
+    transform: translate(-50%, -20%) scale(0.7); /* Imagen de abajo */
+  }
+  #home .carousel3d img.prev,
+  #home .carousel3d img.next {
+    display: block;
+    opacity: 0.5;
+    z-index: 1;
+    box-shadow: none;
+  }
+
+  /* SECCION PORTFOLIO */
+  #design-gallery {
+    padding-top: 3rem;
+  }
+  #design-gallery .text-container {
+    padding: 0.5rem;
     margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  #design-gallery .title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  #design-gallery .gallery-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  #design-gallery .gallery-item {
+    width: 90%;
+  }
+  #design-gallery .gallery-item img {
+    width: 100%;
+  }
+  #design-gallery .modal-content {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  #design-gallery .modal-gallery {
+    grid-template-columns: 1fr;
+  }
+  #design-gallery .modal-header h2 {
+    font-size: 1.2rem;
+  }
+  #design-gallery .modal-description p {
+    display: none;
+  }
+  #design-gallery .modal-media video {
+    max-width: 100%;
+  }
+  #design-gallery .modal-close {
+    display: none;
+  }
+  #design-gallery .gallery-caption {
+    font-size: 0.9rem;
+  }
+  #design-gallery .caption-icon-title {
+    flex-direction: row;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+  }
+  #design-gallery .caption-icon-title .tool-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* SECCION PROJECTS */
+  #projects {
+    padding-top: 3rem;
+  }
+  #projects .text-container {
+    padding: 0.5rem;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  #projects .title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .project-card {
+    flex-direction: column;
+  }
+  .project-image-wrapper,
+  .project-description {
+    width: 100%;
+  }
+  .project-image-wrapper img {
+    max-height: 200px;
+    object-fit: cover;
+  }
+  .project-description {
+    padding: 1rem 0.8rem;
+  }
+  .project-description h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  .project-description .card-text {
+    font-size: 0.5rem;
+    line-height: 1.5;
+  }
+  .project-description h4 {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+  .carousel-inner {
+    backdrop-filter: blur(90px);
+  }
+  .carousel-control-prev,
+  .carousel-control-next {
+    display: none;
+  }
+  .skills-icons .icon-img {
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+    margin-bottom: 6px;
+  }
+
+  /* SECCION SKILLS */
+  #skills {
+    padding-top: 3rem;
+  }
+  #skills .text-container {
+    padding: 0.5rem;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  #skills .container .card {
+    margin: 0.5rem;
+  }
+  #skills .container .card .icon-img {
+    height: 40px;
+  }
+  #skills .container .card h2 {
+    font-size: 0.75rem;
+    margin-top: 0.3rem;
+  }
+  #skills #toggleButton {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+    margin-top: 0%;
+    margin: 0.5rem;
+  }
+  #memory-game-container {
+    height: 100dvh;
+    max-height: 100dvh;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    justify-content: start;
+  }
+  #memory-game-container.active {
+    height: auto;
+    max-height: none;
+  }
+  #skills #stats {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+  #memory-game {
+    gap: 0.4rem;
+    padding: 0.5rem;
+  }
+  #skills #memory-game .card {
+    width: 50px;
+    height: 50px;
+  }
+  .popup-content h2 {
+    font-size: 1.3rem;
+  }
+  .popup-content p {
+    font-size: 1rem;
+  }
+  #popup-close {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+  #resetButton {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
     margin-bottom: 0%;
   }
 
+  /* SECCION ABOUT ME */
   #aboutme {
-    margin: 0%;
+    padding-top: 3.7rem;
   }
   #aboutme .aboutme-container {
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    max-width: 100vh;
-    min-width: 70vh;
+    padding: 1rem;
+    text-align: center;
   }
   #aboutme .text-title-container {
     width: 100%;
   }
-  #aboutme .aboutme-container .text-container {
-    width: 100%;
+  #aboutme .text-container {
+    width: 90%;
+    padding: 0.5rem;
+  }
+  #aboutme .image-container {
+    max-width: 70%;
     margin: 0%;
     padding: 0%;
-    text-align: justify;
   }
-  #aboutme .aboutme-container .image-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    max-width: 42%;
+  #aboutme .text-container h4 {
+    font-size: 0.8rem;
+    padding-bottom: 1rem;
   }
-  #aboutme .aboutme-container a {
-    padding-bottom: 5%;
+  #aboutme .text-container a {
+    font-size: 1rem;
+    margin-top: 0.5rem;
   }
-
-  #projects .carrousel { /* Eliminado, ya no se usa con Bootstrap */
-    width: 100%;
+  #aboutme .text-container-aboutme {
+    padding: 0.5rem;
+    margin-top: 5%;
+    margin-bottom: 5%;
   }
-  #projects .carrousel .big .card{ /* Eliminado, ya no se usa con Bootstrap */
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  #projects .carrousel .big .card a{ /* Eliminado, ya no se usa con Bootstrap */
-    width: 100%;
-  }
-  #projects .carrousel .big .card .description { /* Eliminado, ya no se usa con Bootstrap */
-    width: 100%;
+  #aboutme .text-container-aboutme .title {
+    font-size: 1.8rem;
+    text-align: center;
   }
 
-  /* Estilos responsivos para el carrusel de Bootstrap */
-  .project-card {
-    flex-direction: column; /* Apila imagen y descripción en tabletas y móviles */
-  }
-  .project-image-wrapper,
-  .project-description {
-    width: 100%; /* Ocupan todo el ancho en tabletas y móviles */
-  }
-  .project-image-wrapper img {
-    height: 200px; /* Reducido el tamaño de la imagen en móvil */
-  }
-  .project-description {
-    padding: 1rem; /* Menos padding en móvil */
-  }
-  .project-description .skills-icons .icon-img {
-    height: 20px; /* Reducido el tamaño de los iconos en móvil */
-  }
 
-  #skills #memory-game .card {
-    width: 62px;
-    height: 62px;
-  }
-
+  /* SECCION CONTACT */
   #contact .contact-container {
-    display: flex;
     flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    padding-top: 2%;
+  }
+  #contact .contact-container .columns {
+    width: 100%;
     align-items: center;
+    gap: 0.5rem;
+  }
+  #contact .contact-container a {
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     justify-content: center;
+    width: 100%;
+  }
+  #contact .contact-container a i {
+    font-size: 1.2rem;
+  }
+  #contact .text-container .contact-title {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-top: 3%;
   }
 }
 
 @media screen and (min-width: 1700px) {
-  html{
+  html {
     font-size: 160%;
   }
 
   #home .container .presentation h2 {
-    margin-top: 12%}
+    margin-top: 12%;
+  }
 
   #aboutme {
     padding-top: 0%;
-    height: auto;}
+    height: auto;
+  }
   #aboutme .text-title-container {
-    margin-top: 6%;}
+    margin-top: 6%;
+  }
 
   /* Estilos para pantallas grandes del carrusel */
   #projects .project-image-wrapper img {
@@ -1151,8 +1276,9 @@ html {
   }
 
   #skills #memory-game .card {
-   width: 130px;
-   height: 130px; }
+    width: 130px;
+    height: 130px;
+  }
   #skills #toggleButton {
     font-size: 100%;
     margin-top: 1%;
@@ -1160,19 +1286,22 @@ html {
 }
 
 @media screen and (min-width: 2048px) {
-  html{
+  html {
     font-size: 200%;
   }
 
   #home .container .presentation h2 {
-    margin-top: 12%}
+    margin-top: 12%;
+  }
 
   #aboutme {
     margin-top: 0%;
     padding-top: 0%;
-    height: auto;}
+    height: auto;
+  }
   #aboutme .text-title-container {
-    margin-top: 6%;}
+    margin-top: 6%;
+  }
 
   /* Estilos para pantallas ultra-grandes del carrusel */
   #projects .project-image-wrapper img {
@@ -1183,9 +1312,11 @@ html {
   }
 
   #skills #memory-game .card {
-   width: 170px;
-   height: 170px; }
+    width: 170px;
+    height: 170px;
+  }
   #skills #toggleButton {
     font-size: 100%;
-    margin-top: 1%;}
+    margin-top: 1%;
+  }
 }

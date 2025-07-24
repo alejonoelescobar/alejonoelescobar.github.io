@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@formkit/drag-and-drop": "^0.0.22",
+    "framer-motion": "^12.23.7",
     "react": "^18.2.0"
-  },
-  "devDependencies": {}
+  }
 }
