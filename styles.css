@@ -31,6 +31,139 @@ html {
   object-fit: cover;
 }
 
+/* Modo nocturno general */
+body.dark-mode {
+  color: #f3f3f3;
+}
+
+/* Navbar en modo nocturno */
+body.dark-mode #navbar header .header-container nav ul li a {
+  color: #f3f3f3;
+}
+body.dark-mode #navbar header .header-container nav ul li a:hover {
+  color: #fbde04;
+}
+
+/* Home en modo nocturno */
+body.dark-mode #home .presentation h1 {
+  background: url("./public/Light\ Mode.gif") repeat center center;
+  background-attachment: fixed;
+  background-repeat: repeat-x;
+  background-size: cover;
+  background-position: top;
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+body.dark-mode #home .presentation p {
+  color: #f3f3f3;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+body.dark-mode #home a {
+  text-decoration: none;
+  color: #ffd60a;
+  padding: 3%;
+  margin-bottom: 0%;
+  font-style: italic;
+  backdrop-filter: blur(2px);
+  text-align: center;
+  display: block;
+  margin: auto;
+  margin-top: 1rem;
+  background-image: linear-gradient(
+    0deg,
+    rgba(243, 163, 35, 0.331),
+    rgba(72, 7, 141, 0.637)
+  );
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Design gallery en modo nocturno */
+body.dark-mode #design-gallery .text-container .title {
+  text-shadow: none;
+}
+body.dark-mode #design-gallery .gallery-caption span {
+  color: #f3f3f3;
+}
+
+/* Programming projects en modo nocturno */
+body.dark-mode #projects .text-container .title {
+  text-shadow: none;
+}
+body.dark-mode #projects .project-description h2 {
+  color: #fbde04;
+}
+body.dark-mode #projects .project-description p {
+  color: #f3f3f3;
+}
+body.dark-mode #projects .project-description h4 {
+  color: #fbde04;
+}
+body.dark-mode #projects .carousel-indicators [data-bs-target] {
+  background-color: rgb(243, 163, 35);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.15);
+  opacity: 0.7;
+  backdrop-filter: blur(7px);
+}
+body.dark-mode #projects .carousel-indicators .active {
+  background-image: linear-gradient(
+    45deg,
+    rgb(243, 163, 35),
+    rgb(72, 7, 141),
+    rgb(243, 163, 35)
+  ); /* Degradado para el activo */
+  opacity: 0.8;
+  backdrop-filter: blur(7px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Skills en modo nocturno */
+body.dark-mode #skills .text-container .title {
+  text-shadow: none;
+}
+body.dark-mode #skills .container .card h2 {
+  color: rgb(243, 163, 35);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+body.dark-mode #skills #memory-game .card .face {
+  color: rgb(243, 163, 35);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+body.dark-mode #skills #stats {
+  color: #f3f3f3;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* About me en modo nocturno */
+body.dark-mode #aboutme .text-container-aboutme .title {
+  text-shadow: none;
+}
+body.dark-mode #aboutme .text-container p {
+  color: #f3f3f3;
+}
+body.dark-mode #aboutme .text-container a {
+  color: rgb(243, 163, 35);
+}
+body.dark-mode #aboutme .text-container h4 {
+  color: #f3f3f3;
+}
+body.dark-mode #aboutme .text-container h4 span {
+  color: rgb(243, 163, 35);
+}
+
+/* Contact en modo nocturno */
+body.dark-mode #contact .text-container .contact-title {
+  text-shadow: none;
+}
+body.dark-mode #contact .contact-container a {
+  color: #f3f3f3;
+}
+body.dark-mode #contact .contact-container a:hover {
+  color: rgb(243, 163, 35);
+}
+
+/* NAVBAR */
 #navbar header {
   position: fixed;
   top: 0%;
@@ -42,26 +175,108 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 70px;
+  box-sizing: border-box;
 }
 #navbar header .header-container nav ul {
   list-style: none;
   display: flex;
   align-items: center;
+  padding: 0;
+  margin: 0;
+}
+#navbar header .header-container nav ul li {
+  margin: 0 12px;
 }
 #navbar header .header-container nav ul li a {
   text-decoration: none;
   color: #673303;
-  margin: 0 10px;
   font-weight: 600;
-  transition: 0.3s;
+  font-size: 16px;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
 }
 #navbar header .header-container nav ul li a:hover {
   color: #fbde04;
   text-shadow: #673303 0.1em 0.1em 0.2em;
 }
+#navbar header .header-container > * {
+  flex-shrink: 0;
+}
 #navbar header #menu {
-  color: transparent;
+  font-size: 24px;
+  color: #673303;
+  margin-left: 20px;
+  cursor: pointer;
+  display: none; /* visible solo en mobile */
+}
+#navbar .theme-switch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 60px; /* Este valor es importante para mantener el espacio */
+  position: relative;
+  cursor: pointer;
+}
+#navbar .theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+#navbar .slider {
+  background-color: #370994; /* día */
+  border-radius: 34px;
+  position: relative;
+  height: 100%;
+  width: 100%; /* Ajustamos a ocupar todo el .theme-switch */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6px;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+  overflow: hidden;
+}
+#navbar .sun-icon,
+.moon-icon {
+  color: #ffe44d;
+  font-size: 18px;
+  pointer-events: none;
+  user-select: none;
+}
+#navbar .slider::before {
+  content: "";
+  position: absolute;
+  height: 26px;
+  width: 26px;
+  left: 2px;
+  bottom: 2px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+#navbar .theme-switch input:checked + .slider {
+  background-color: #ffd60a; /* azul noche */
+}
+#navbar .theme-switch input:checked + .slider::before {
+  transform: translateX(30px);
+}
+#navbar .theme-switch input:checked + .slider .sun-icon {
+  color: #370994;
+}
+#navbar .theme-switch input:checked + .slider .moon-icon {
+  color: #fbde04;
+}
+#navbar .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
 }
 
 /* HOME */
@@ -349,7 +564,6 @@ html {
   font-size: 1rem;
   color: #333;
 }
-/* Estilo del modal general */
 #design-gallery .gallery-modal {
   position: fixed;
   top: 0;
@@ -364,11 +578,9 @@ html {
   padding: 2rem;
   box-sizing: border-box;
 }
-/* Oculta el modal por defecto */
 #design-gallery .gallery-modal.hidden {
   display: none;
 }
-/* Contenido del modal */
 #design-gallery .modal-content {
   color: rgba(255, 255, 255, 0.883);
   max-width: 900px;
@@ -411,7 +623,6 @@ html {
   font-size: 2rem;
   cursor: pointer;
 }
-/* Video */
 #design-gallery .modal-media video {
   max-width: 400px;
 }
@@ -447,6 +658,7 @@ html {
   object-fit: contain;
 }
 
+/* Programming Projects Gallery */
 #projects {
   margin: auto;
   width: 100%;
@@ -482,16 +694,14 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-/* Nuevo contenedor para el carrusel y los botones de navegación */
-.carousel-main-wrapper {
+#projects .carousel-main-wrapper {
   display: flex;
   align-items: center; /* Alinea verticalmente los elementos */
   width: 95%; /* Ancho del contenedor principal del carrusel y botones */
   max-width: 120em;
   margin: 20px auto; /* Centrar y dar margen */
 }
-/* Estilos para el contenedor del carrusel de Bootstrap (solo el carrusel en sí) */
-#carouselExampleIndicators {
+#projects #carouselExampleIndicators {
   flex-grow: 1; /* Permite que el carrusel ocupe el espacio disponible entre los botones */
   height: auto; /* Altura automática para adaptarse al contenido */
   border-radius: 0; /* ELIMINADO: Bordes redondeados */
@@ -499,34 +709,33 @@ html {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   /* Eliminadas propiedades de margin, box-shadow, background-color, backdrop-filter ya que estaban en .carousel-main-wrapper */
 }
-/* Estilos de cada "slide" de proyecto */
-.project-card {
+#projects .project-card {
   display: flex; /* Para la distribución de imagen y descripción */
   flex-direction: row; /* Por defecto, en fila (escritorio) */
   width: 100%;
   border-radius: 0; /* ELIMINADO: Bordes redondeados para la tarjeta */
   overflow: hidden; /* Asegura que la imagen no se desborde */
 }
-.project-image-wrapper {
+#projects .project-image-wrapper {
   width: 50%; /* Ocupa la mitad del ancho en escritorio */
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
-.project-image-wrapper img {
+#projects .project-image-wrapper img {
   width: 100%;
   height: 100%; /* Altura fija para las imágenes del proyecto en escritorio */
   object-fit: cover; /* Recorta la imagen para cubrir el área */
   transition: transform 0.3s ease;
 }
-.project-image-wrapper img:hover {
+#projects .project-image-wrapper img:hover {
   transform: scale(1.05);
 }
-.carousel-inner {
+#projects .carousel-inner {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.15);
 }
-.project-description {
+#projects .project-description {
   width: 50%; /* Ocupa la otra mitad del ancho en escritorio */
   padding: 1rem; /* Padding similar a tu .description original */
   color: rgb(16, 15, 17); /* Color de texto similar al original */
@@ -535,28 +744,28 @@ html {
   justify-content: center;
   backdrop-filter: blur(90px);
 }
-.project-description h2 {
+#projects .project-description h2 {
   /* Mantener los estilos de h2 si los tenías antes, o añadir si es necesario */
   margin-bottom: 15px; /* Espacio debajo del título del proyecto */
   color: rgb(96, 0, 186);
 }
-.project-description .card-text {
+#projects .project-description .card-text {
   color: #3e1e00; /* Color de texto similar al original */
   font-size: 90%; /* Tamaño de fuente similar al original */
   font-style: italic; /* Estilo de fuente similar al original */
   line-height: 1.6; /* Mejorar legibilidad */
   margin-bottom: 15px; /* Espacio debajo del texto */
 }
-.project-description h4 {
+#projects .project-description h4 {
   margin-top: 3%; /* Margen superior similar al original */
   margin-bottom: 10px; /* Espacio debajo del subtítulo */
   color: rgb(96, 0, 186);
 }
-.project-description .skills-icons {
+#projects .project-description .skills-icons {
   display: block; /* Asegura que no se comporte como flex y permita inline-block */
   /* flex-wrap: wrap; se elimina porque display: block ya maneja el flujo */
 }
-.project-description .skills-icons .icon-img {
+#projects .project-description .skills-icons .icon-img {
   width: 30px; /* Ancho fijo */
   height: 30px; /* Alto fijo */
   max-width: 40px; /* Asegura que no crezca más allá de 20px */
@@ -566,9 +775,8 @@ html {
   vertical-align: middle; /* Alinea verticalmente los iconos con el texto si lo hubiera */
   object-fit: contain; /* Asegura que el contenido de la imagen se ajuste dentro de los límites */
 }
-/* Estilos para los botones de navegación del carrusel (flechas) */
-.carousel-control-prev,
-.carousel-control-next {
+#projects .carousel-control-prev,
+#projects .carousel-control-next {
   position: static; /* Elimina el posicionamiento absoluto de Bootstrap */
   width: 60px; /* Ancho fijo para el "agujero" */
   height: 60px; /* Alto fijo para el "agujero" */
@@ -581,12 +789,12 @@ html {
   justify-content: center;
   transition: background-color 0.3s ease, backdrop-filter 0.3s ease; /* Transición suave para el hover */
 }
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
+#projects .carousel-control-prev:hover,
+#projects .carousel-control-next:hover {
   filter: invert(1);
 }
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
+#projects .carousel-control-prev-icon,
+#projects .carousel-control-next-icon {
   /* Eliminado background-image: none; para permitir las flechas SVG de Bootstrap */
   width: 40px; /* Tamaño del área del icono personalizado, similar a tu original */
   height: 70px; /* Tamaño del área del icono personalizado, similar a tu original */
@@ -594,14 +802,14 @@ html {
   display: block; /* Asegura que el tamaño se aplique */
   transition: filter 0.3s ease; /* Suaviza el cambio de color en hover */
 }
-.carousel-indicators {
+#projects .carousel-indicators {
   position: static; /* Elimina el posicionamiento absoluto de Bootstrap */
   margin: 0; /* Elimina márgenes predeterminados */
   padding: 1rem; /* Elimina padding predeterminado */
   display: flex; /* Para centrar los botones dentro */
   justify-content: center; /* Centra los botones */
 }
-.carousel-indicators [data-bs-target] {
+#projects .carousel-indicators [data-bs-target] {
   width: 3em; /* Puntos más anchos, similar a tu .dot original */
   height: 0.5em; /* Puntos más altos, similar a tu .dot original */
   margin: 0.2em 0.5em; /* Espacio entre puntos, similar a tu .dot original */
@@ -609,8 +817,9 @@ html {
   opacity: 1; /* Opacidad para los dots no activos */
   transition: all 0.3s ease;
   border: none; /* Eliminar el borde predeterminado de Bootstrap */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.15);
 }
-.carousel-indicators .active {
+#projects .carousel-indicators .active {
   background-image: linear-gradient(
     45deg,
     rgb(72, 7, 141),
@@ -895,32 +1104,42 @@ html {
     display: none;
   }
 
+  body.dark-mode #background .video-container {
+    background-image: url("./public/background/night/image.png");
+    background-size: cover;
+    background-position: center;
+  }
+  body.dark-mode #background .video-container video {
+    display: none;
+  }
+
   #navbar header .header-container nav ul {
     display: none;
-    text-align: right;
+    flex-direction: column;
+    position: absolute;
+    top: 70px; /* debajo del header */
+    left: 0;
+    right: 0;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 99;
+    background-color: rgba(243, 163, 35, 0.881);
+    text-align: center;
+  }
+  #navbar header .header-container nav ul.responsive {
+    display: flex;
   }
   #navbar header #menu {
+    display: block;
+  }
+  #navbar header .header-container nav ul li {
+    margin: 10px 0;
+  }
+  #navbar header .header-container nav ul li a {
     color: #370994;
-    display: block;
   }
-  #navbar header .header-container nav .responsive {
-    display: block;
-    position: absolute;
-    max-width: 100vh;
-    top: 100%;
-    right: 0;
-    padding: 10px 0;
-    background-color: #fb9c0485;
-  }
-  #navbar.responsive header .header-container nav ul {
-    display: flex;
-    flex-direction: column wrap;
-    align-items: center;
-    text-align: right;
-  }
-  #navbar .responsive header .header-container nav li {
-    display: block !important;
-    margin: 5px 0;
+  #navbar header .header-container nav ul li a:hover {
+    color: rgb(243, 163, 35);
   }
 
   /* SECCION HOME */
@@ -1069,40 +1288,40 @@ html {
     font-size: 1.5rem;
     text-align: center;
   }
-  .project-card {
+  #projects .project-card {
     flex-direction: column;
   }
-  .project-image-wrapper,
-  .project-description {
+  #projects .project-image-wrapper,
+  #projects .project-description {
     width: 100%;
   }
-  .project-image-wrapper img {
+  #projects .project-image-wrapper img {
     max-height: 200px;
     object-fit: cover;
   }
-  .project-description {
+  #projects .project-description {
     padding: 1rem 0.8rem;
   }
-  .project-description h2 {
+  #projects .project-description h2 {
     font-size: 1.2rem;
     margin-bottom: 10px;
   }
-  .project-description .card-text {
+  #projects .project-description .card-text {
     font-size: 0.5rem;
     line-height: 1.5;
   }
-  .project-description h4 {
+  #projects .project-description h4 {
     font-size: 1rem;
     margin-top: 1rem;
   }
-  .carousel-inner {
+  #projects .carousel-inner {
     backdrop-filter: blur(90px);
   }
-  .carousel-control-prev,
-  .carousel-control-next {
+  #projects .carousel-control-prev,
+  #projects .carousel-control-next {
     display: none;
   }
-  .skills-icons .icon-img {
+  #projects .skills-icons .icon-img {
     width: 20px;
     height: 20px;
     margin-right: 6px;
@@ -1248,6 +1467,40 @@ html {
     font-size: 160%;
   }
 
+  /* NAVBAR */
+  #navbar header .header-container nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px; /* debajo del header */
+    left: 0;
+    right: 0;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 99;
+    background-color: rgba(255, 180, 19, 0.964);
+    text-align: center;
+  }
+  #navbar header .header-container nav ul.responsive {
+    display: flex;
+  }
+  #navbar header #menu {
+    display: block;
+  }
+  #navbar header .header-container nav ul li {
+    margin: 10px 0;
+  }
+  #navbar header .header-container nav ul li a {
+    
+    color: #370994;
+  }
+  #navbar header .header-container nav ul li a:hover {
+    color: rgb(243, 163, 35);
+  }
+  #navbar .theme-switch {
+    margin-left: auto;
+  }
+
   /* SECCION HOME */
   #home {
     height: auto;
@@ -1372,15 +1625,15 @@ html {
   }
 
   /* SECCION PROJECTS */
-  .project-card {
+  #projects .project-card {
     flex-direction: column;
   }
-  .project-image-wrapper,
-  .project-description {
+  #projects .project-image-wrapper,
+  #projects .project-description {
     width: 100%;
   }
-  .carousel-control-prev,
-  .carousel-control-next {
+  #projects .carousel-control-prev,
+  #projects .carousel-control-next {
     display: none;
   }
 
@@ -1400,8 +1653,8 @@ html {
     padding: 0.5rem;
   }
   #skills .container .card .icon-img {
-   height: 80px;
-   width: auto;
+    height: 80px;
+    width: auto;
   }
   #skills .container .card h2 {
     font-size: 0.75rem;
@@ -1457,7 +1710,7 @@ html {
   }
   #contact .contact-container a {
     justify-content: flex-start;
-    font-size: .8rem;
+    font-size: 0.8rem;
     gap: 1rem;
   }
   #contact .contact-container a i {

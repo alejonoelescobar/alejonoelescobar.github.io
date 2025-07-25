@@ -1,4 +1,4 @@
-// Script carrousel del landing
+//! Script carrousel del landing
 const carousel = document.getElementById("carousel3d");
 const images = carousel.querySelectorAll("img");
 let current = 0;
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Script Modal
+//! Script Modal
 function ajustarModalPorVideo(modal) {
   const video = modal.querySelector('video');
   const modalContent = modal.querySelector('.modal-content');
@@ -89,7 +89,7 @@ function ajustarModalPorVideo(modal) {
   }
 }
 
-// Al cerrar modal, saco el listener de resize para evitar memory leaks
+//* Al cerrar modal, saco el listener de resize para evitar memory leaks
 function cerrarModal(modal) {
   modal.classList.add('hidden');
   if (modal._resizeListener) {
@@ -100,8 +100,7 @@ function cerrarModal(modal) {
   const modalContent = modal.querySelector('.modal-content');
   if (modalContent) modalContent.style.flexDirection = '';
 }
-
-// Abrir modal
+//* Abrir modal
 document.querySelectorAll('.open-modal-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     const targetId = btn.dataset.modal;
@@ -112,8 +111,7 @@ document.querySelectorAll('.open-modal-btn').forEach(btn => {
     }
   });
 });
-
-// Cerrar modal con botón
+//* Cerrar modal con botón
 document.querySelectorAll('.modal-close').forEach(closeBtn => {
   closeBtn.addEventListener('click', () => {
     const modal = closeBtn.closest('.gallery-modal');
@@ -122,8 +120,7 @@ document.querySelectorAll('.modal-close').forEach(closeBtn => {
     }
   });
 });
-
-// Cerrar modal al clickear fuera del contenido (overlay)
+//* Cerrar modal al clickear fuera del contenido (overlay)
 document.querySelectorAll('.gallery-modal').forEach(modal => {
   modal.addEventListener('click', (e) => {
     if (e.target === modal) {
@@ -133,9 +130,7 @@ document.querySelectorAll('.gallery-modal').forEach(modal => {
 });
 
 
-
-
-// Script de Bootstrap para el memory game
+//! Script para el memory game
 document.addEventListener("DOMContentLoaded", () => {
   const toggleButton = document.getElementById("toggleButton");
   const memoryGameContainer = document.getElementById("memory-game-container");
@@ -153,4 +148,73 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+//* Script para el cambio de imágenes de MemoryGame
+function actualizarIconosPorTema() {
+  const isDark = document.body.classList.contains("dark-mode");
+  const icons = document.querySelectorAll('#technologies-skills .icon-img');
 
+  icons.forEach(img => {
+    const nombreArchivo = img.dataset.base; // por ejemplo "html.png"
+    if (!nombreArchivo) return;
+
+    const folder = isDark ? "night-mode" : "";
+    img.src = `./public/icons/${folder}/${nombreArchivo}`;
+  });
+}
+function actualizarIconosJuegoMemoria() {
+  const isDark = document.body.classList.contains("dark-mode");
+  const icons = document.querySelectorAll('#memory-game img[data-base]');
+
+  icons.forEach(img => {
+    const nombreArchivo = img.dataset.base;
+    const folder = isDark ? "night-mode" : "";
+    img.src = `./public/icons/${folder}/${nombreArchivo}`;
+  });
+}
+
+//! Script para la section de projetcs
+function actualizarIconosProyectos() {
+  const isDark = document.body.classList.contains("dark-mode");
+  const iconos = document.querySelectorAll('#projects .skills-icons .icon-img');
+
+  iconos.forEach(icon => {
+    const nombre = icon.dataset.name;
+    if (!nombre) return;
+
+    // Ruta base dinámica
+    const carpeta = isDark ? "night-mode" : "";
+    const ruta = carpeta
+      ? `./public/icons/${carpeta}/${nombre}.png`
+      : `./public/icons/${nombre}.png`;
+
+    icon.src = ruta;
+  });
+}
+
+
+//! Script para el dark mode
+const toggleButton = document.getElementById("toggle-theme");
+const body = document.body;
+const bgVideo = document.getElementById("bg-video");
+
+//* Estado del modo actual (podés guardar en localStorage si querés)
+let isDarkMode = false;
+
+toggleButton.addEventListener("click", () => {
+  isDarkMode = !isDarkMode;
+
+  if (isDarkMode) {
+    document.body.classList.add("dark-mode");
+    bgVideo.src = "./public/background/night/night-mode.mp4";
+    toggleButton.innerHTML = '<i class="fa-solid fa-sun"></i>';
+  } else {
+    document.body.classList.remove("dark-mode");
+    bgVideo.src = "./public/light-mode.mp4";
+    toggleButton.innerHTML = '<i class="fa-solid fa-moon"></i>';
+  }
+
+  bgVideo.load(); // Reinicia el video para aplicar el nuevo
+  actualizarIconosPorTema(); // 👉 Llamá acá
+  actualizarIconosJuegoMemoria(); // memory game 👈
+  actualizarIconosProyectos(); // 👈 ¡ACÁ!
+});

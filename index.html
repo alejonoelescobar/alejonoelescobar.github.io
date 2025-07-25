@@ -29,10 +29,11 @@
   </head>
 
   <body>
+
     <!-- SECCIÓN BACKGROUND -->
     <section id="background">
       <div class="video-container">
-        <video autoplay loop muted>
+        <video autoplay loop muted id="bg-video">
           <source src="./public/light-mode.mp4" type="video/mp4" />
         </video>
       </div>
@@ -42,8 +43,13 @@
     <section id="navbar">
       <header>
         <div class="header-container">
-          <img src="./public/logoAE.png" alt="Logo" class="logo" />
-          <nav>
+
+          <div class="nav-left">
+            <img src="./public/logoAE.png" alt="Logo" class="logo" />
+          </div>
+          
+          
+          <nav class="nav-center">
             <ul>
               <li><a href="#home" class="active">HOME</a></li>
               <li><a href="#design-gallery">PORTFOLIO</a></li>
@@ -54,11 +60,23 @@
             </ul>
           </nav>
 
-          <!--MENU RESPONSIVE--->
-          <div id="menu" onclick="openNav()">
-            <i class="fa-solid fa-bars"></i>
-            <script src="./components/navbar/responsive/index.js"></script>
+          <div class="nav-right">
+            <!--MENU RESPONSIVE--->
+            <div id="menu" onclick="openNav()">
+              <i class="fa-solid fa-bars"></i>
+              <script src="./components/navbar/responsive/index.js"></script>
+            </div>
+  
+            <!--TOGGLE THEME-->
+            <label class="theme-switch">
+              <input type="checkbox" id="toggle-theme" />
+              <span class="slider">
+                <i class="fa-solid fa-sun sun-icon"></i>
+                <i class="fa-solid fa-moon moon-icon"></i>
+              </span>
+            </label>
           </div>
+
         </div>
       </header>
     </section>
@@ -119,7 +137,7 @@
           <div class="gallery-caption">
             <div class="caption-icon-title">
               <img
-                src="./public/icons/photoshop.png"
+                src="./public/icons/Photoshop.png"
                 alt="Photoshop Icon"
                 class="tool-icon"
               />
@@ -149,7 +167,7 @@
             <div class="modal-description">
               <div class="modal-header">
                 <img
-                  src="./public/icons/photoshop.png"
+                  src="./public/icons/Photoshop.png"
                   alt="Photoshop Icon"
                   class="tool-icon"
                 />
@@ -178,7 +196,7 @@
           <div class="gallery-caption">
             <div class="caption-icon-title">
               <img
-                src="./public/icons/photoshop.png"
+                src="./public/icons/Photoshop.png"
                 alt="Photoshop Icon"
                 class="tool-icon"
               />
@@ -208,7 +226,7 @@
             <div class="modal-description">
               <div class="modal-header">
                 <img
-                  src="./public/icons/photoshop.png"
+                  src="./public/icons/Photoshop.png"
                   alt="Photoshop Icon"
                   class="tool-icon"
                 />
@@ -236,7 +254,7 @@
           <div class="gallery-caption">
             <div class="caption-icon-title">
               <img
-                src="./public/icons/photoshop.png"
+                src="./public/icons/Photoshop.png"
                 alt="Photoshop Icon"
                 class="tool-icon"
               />
@@ -266,7 +284,7 @@
             <div class="modal-description">
               <div class="modal-header">
                 <img
-                  src="./public/icons/photoshop.png"
+                  src="./public/icons/Photoshop.png"
                   alt="Photoshop Icon"
                   class="tool-icon"
                 />
@@ -409,7 +427,7 @@
           <div class="gallery-caption">
             <div class="caption-icon-title">
               <img
-                src="./public/icons/photoshop.png"
+                src="./public/icons/Photoshop.png"
                 alt="Photoshop Icon"
                 class="tool-icon"
               />
@@ -441,7 +459,7 @@
             <div class="modal-description">
               <div class="modal-header">
                 <img
-                  src="./public/icons/photoshop.png"
+                  src="./public/icons/Photoshop.png"
                   alt="Photoshop Icon"
                   class="tool-icon"
                 />
@@ -467,7 +485,7 @@
           <div class="gallery-caption">
             <div class="caption-icon-title">
               <img
-                src="./public/icons/photoshop.png"
+                src="./public/icons/Photoshop.png"
                 alt="Photoshop Icon"
                 class="tool-icon"
               />
@@ -497,7 +515,7 @@
             <div class="modal-description">
               <div class="modal-header">
                 <img
-                  src="./public/icons/photoshop.png"
+                  src="./public/icons/Photoshop.png"
                   alt="Photoshop Icon"
                   class="tool-icon"
                 />
@@ -520,7 +538,7 @@
           <div class="gallery-caption">
             <div class="caption-icon-title">
               <img
-                src="./public/icons/photoshop.png"
+                src="./public/icons/Photoshop.png"
                 alt="Photoshop Icon"
                 class="tool-icon"
               />
@@ -533,7 +551,7 @@
           <div class="gallery-caption">
             <div class="caption-icon-title">
               <img
-                src="./public/icons/photoshop.png"
+                src="./public/icons/Photoshop.png"
                 alt="Photoshop Icon"
                 class="tool-icon"
               />
@@ -546,7 +564,7 @@
           <div class="gallery-caption">
             <div class="caption-icon-title">
               <img
-                src="./public/icons/photoshop.png"
+                src="./public/icons/Photoshop.png"
                 alt="Photoshop Icon"
                 class="tool-icon"
               />
@@ -564,7 +582,7 @@
           <div class="gallery-caption">
             <div class="caption-icon-title">
               <img
-                src="./public/icons/photoshop.png"
+                src="./public/icons/Photoshop.png"
                 alt="Photoshop Icon"
                 class="tool-icon"
               />
@@ -594,7 +612,7 @@
             <div class="modal-description">
               <div class="modal-header">
                 <img
-                  src="./public/icons/photoshop.png"
+                  src="./public/icons/Photoshop.png"
                   alt="Photoshop Icon"
                   class="tool-icon"
                 />
@@ -639,6 +657,7 @@
           data-bs-touch="true"
         >
           <div class="carousel-inner">
+
             <div class="carousel-item active">
               <div class="project-card">
                 <a
@@ -671,71 +690,83 @@
                       alt="js"
                       class="icon-img"
                       title="JavaScript"
+                      data-name="JavaScript"
                     />
                     <img
                       src="./public/icons/HTML.png"
                       alt="html"
                       class="icon-img"
                       title="HTML"
+                      data-name="HTML"
                     />
                     <img
                       src="./public/icons/CSS.png"
                       alt="css"
                       class="icon-img"
                       title="CSS"
+                      data-name="CSS"
                     />
                     <img
-                      src="./public/icons/Next.js.png"
+                      src="./public/icons/NextJS.png"
                       alt="next"
                       class="icon-img"
-                      title="Next.js"
+                      title="NextJS"
+                      data-name="NextJS"
                     />
                     <img
-                      src="./public/icons/Node.js.png"
+                      src="./public/icons/NodeJS.png"
                       alt="node"
                       class="icon-img"
                       title="Node.js"
+                      data-name="NodeJS"
                     />
                     <img
                       src="./public/icons/React.png"
                       alt="react"
                       class="icon-img"
                       title="React"
+                      data-name="React"
                     />
                     <img
                       src="./public/icons/Redux.png"
                       alt="redux"
                       class="icon-img"
                       title="Redux"
+                      data-name="Redux"
                     />
                     <img
                       src="./public/icons/MongoDB.png"
                       alt="mongo"
                       class="icon-img"
                       title="MongoDB"
+                      data-name="MongoDB"
                     />
                     <img
                       src="./public/icons/PostgreSQL.png"
                       alt="postgresql"
                       class="icon-img"
                       title="PostgreSQL"
+                      data-name="PostgreSQL"
                     />
                     <img
                       src="./public/icons/Tailwind.png"
                       alt="tailwind"
                       class="icon-img"
                       title="Tailwind"
+                      data-name="Tailwind"
                     />
                     <img
-                      src="./public/icons/github.png"
-                      alt="github"
+                      src="./public/icons/GitHub.png"
+                      alt="GitHub"
                       class="icon-img"
                       title="git"
+                      data-name="GitHub"
                     />
                   </div>
                 </div>
               </div>
             </div>
+
             <div class="carousel-item">
               <div class="project-card">
                 <a
@@ -769,30 +800,35 @@
                       alt="html"
                       class="icon-img"
                       title="HTML"
+                      data-name="HTML"
                     />
                     <img
                       src="./public/icons/CSS.png"
                       alt="css"
                       class="icon-img"
                       title="CSS"
+                      data-name="CSS"
                     />
                     <img
                       src="./public/icons/Photoshop.png"
                       alt="photoshop"
                       class="icon-img"
                       title="Photoshop"
+                      data-name="Photoshop"
                     />
                     <img
                       src="./public/icons/Illustrator.png"
                       alt="illustrator"
                       class="icon-img"
                       title="Illustrator"
+                      data-name="Illustrator"
                     />
                     <img
                       src="./public/icons/Canva.png"
                       alt="canva"
                       class="icon-img"
                       title="Canva"
+                      data-name="Canva"
                     />
                   </div>
                 </div>
@@ -829,42 +865,49 @@
                       alt="js"
                       class="icon-img"
                       title="JavaScript"
+                      data-name="JavaScript"
                     />
                     <img
                       src="./public/icons/HTML.png"
                       alt="html"
                       class="icon-img"
                       title="HTML"
+                      data-name="HTML"
                     />
                     <img
                       src="./public/icons/CSS.png"
                       alt="css"
                       class="icon-img"
                       title="CSS"
+                      data-name="CSS"
                     />
                     <img
                       src="./public/icons/React.png"
                       alt="react"
                       class="icon-img"
                       title="React"
+                      data-name="React"
                     />
                     <img
                       src="./public/icons/Redux.png"
                       alt="redux"
                       class="icon-img"
                       title="Redux"
+                      data-name="Redux"
                     />
                     <img
                       src="./public/icons/PostgreSQL.png"
                       alt="postgresql"
                       class="icon-img"
                       title="PostgreSQL"
+                      data-name="PostgreSQL"
                     />
                     <img
-                      src="./public/icons/github.png"
-                      alt="github"
+                      src="./public/icons/GitHub.png"
+                      alt="GitHub"
                       class="icon-img"
                       title="git"
+                      data-name="GitHub"
                     />
                   </div>
                 </div>
@@ -925,6 +968,7 @@
               src="./public/icons/Illustrator.png"
               alt="illustrator"
               class="icon-img"
+              data-base="Illustrator.png"
             />
             <h2>Illustrator</h2>
           </div>
@@ -933,6 +977,7 @@
               src="./public/icons/Photoshop.png"
               alt="photoshop"
               class="icon-img"
+              data-base="Photoshop.png"
             />
             <h2>Photoshop</h2>
           </div>
@@ -941,6 +986,7 @@
               src="./public/icons/After-effects.png"
               alt="aftereffects"
               class="icon-img"
+              data-base="After-effects.png"
             />
             <h2>After Effects</h2>
           </div>
@@ -949,11 +995,12 @@
               src="./public/icons/PremierePro.png"
               alt="PremierePro"
               class="icon-img"
+              data-base="PremierePro.png"
             />
             <h2>Premiere Pro</h2>
           </div>
           <div class="card">
-            <img src="./public/icons/Canva.png" alt="canva" class="icon-img" />
+            <img src="./public/icons/Canva.png" alt="canva" class="icon-img" data-base="Canva.png"/>
             <h2>Canva</h2>
           </div>
           <div class="card">
@@ -961,35 +1008,37 @@
               src="./public/icons/JavaScript.png"
               alt="js"
               class="icon-img"
+              data-base="JavaScript.png"
             />
             <h2>JavaScript</h2>
           </div>
           <div class="card">
             <img
-              src="./public/icons/Typescrypt.png"
-              alt="typescript"
+              src="./public/icons/TypeScript.png"
+              alt="TypeScript"
               class="icon-img"
+              data-base="TypeScript.png"
             />
             <h2>TypeScript</h2>
           </div>
           <div class="card">
-            <img src="./public/icons/HTML.png" alt="html" class="icon-img" />
+            <img src="./public/icons/HTML.png" alt="html" class="icon-img" data-base="HTML.png"/>
             <h2>HTML</h2>
           </div>
           <div class="card">
-            <img src="./public/icons/CSS.png" alt="css" class="icon-img" />
+            <img src="./public/icons/CSS.png" alt="css" class="icon-img" data-base="CSS.png"/>
             <h2>CSS</h2>
           </div>
           <div class="card">
-            <img src="./public/icons/Next.js.png" alt="next" class="icon-img" />
+            <img src="./public/icons/NextJS.png" alt="next" class="icon-img" data-base="NextJS.png"/>
             <h2>Next.js</h2>
           </div>
           <div class="card">
-            <img src="./public/icons/Node.js.png" alt="node" class="icon-img" />
+            <img src="./public/icons/NodeJS.png" alt="node" class="icon-img" data-base="NodeJS.png"/>
             <h2>Node.js</h2>
           </div>
           <div class="card">
-            <img src="./public/icons/React.png" alt="react" class="icon-img" />
+            <img src="./public/icons/React.png" alt="react" class="icon-img" data-base="React.png"/>
             <h2>React</h2>
           </div>
           <div class="card">
@@ -998,6 +1047,7 @@
               alt="redux"
               class="icon-img"
               title="Redux"
+              data-base="Redux.png"
             />
             <h2>Redux</h2>
           </div>
@@ -1007,6 +1057,7 @@
               alt="mongo"
               class="icon-img"
               title="MongoDB"
+              data-base="MongoDB.png"
             />
             <h2>MongoDB</h2>
           </div>
@@ -1016,6 +1067,7 @@
               alt="postgresql"
               class="icon-img"
               title="PostgreSQL"
+              data-base="PostgreSQL.png"
             />
             <h2>PostgreSQL</h2>
           </div>
@@ -1025,24 +1077,27 @@
               alt="tailwind"
               class="icon-img"
               title="Tailwind"
+              data-base="Tailwind.png"
             />
             <h2>Tailwind</h2>
           </div>
           <div class="card">
             <img
-              src="./public/icons/github.png"
-              alt="github"
+              src="./public/icons/GitHub.png"
+              alt="GitHub"
               class="icon-img"
               title="Git"
+              data-base="GitHub.png"
             />
             <h2>Git</h2>
           </div>
           <div class="card">
             <img
-              src="./public/icons/jest.png"
+              src="./public/icons/Jest.png"
               alt="jest"
               class="icon-img"
               title="Jest"
+              data-base="Jest.png"
             />
             <h2>Jest</h2>
           </div>
@@ -1052,6 +1107,7 @@
               alt="python"
               class="icon-img"
               title="Python"
+              data-base="Python.png"
             />
             <h2>Python</h2>
           </div>
@@ -1061,6 +1117,7 @@
               alt="cloudinary"
               class="icon-img"
               title="Cloudinary"
+              data-base="Cloudinary.png"
             />
             <h2>Cloudinary</h2>
           </div>
@@ -1142,8 +1199,8 @@
               >
             </div>
             <div>
-              <a href="https://github.com/alejonoelescobar" target="_blank"
-                ><i class="fa-brands fa-square-github"></i> @alejonoelescobar</a
+              <a href="https://GitHub.com/alejonoelescobar" target="_blank"
+                ><i class="fa-brands fa-square-GitHub"></i> @alejonoelescobar</a
               >
             </div>
           </div>

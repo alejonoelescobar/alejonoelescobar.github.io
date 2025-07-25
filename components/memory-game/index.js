@@ -5,16 +5,16 @@ let currentMove = 0;
 let currentAttempts = 0;
 
 const skillsUsed = [
-  "Jest", "Python", "Git", "PostgreSQL", "Cloudinary", "Tailwind",
-  "HTML", "CSS", "Next", "Node.js", "React", "Redux",
-  "MongoDB", "Typescript", "Javascript", "Illustrator", "Photoshop", "Canva", "After Effects", "Premiere Pro"
+  "Jest", "Python", "Git", "PostgreSQL", "Cloudinary", "Tailwind", "HTML", "CSS", "Next", "Node.js", "React", "Redux", "MongoDB", "TypeScript", "Javascript", "Illustrator", "Photoshop", "Canva", "After Effects", "Premiere Pro"
 ];
 
 const imagesUsed = [
-  "jest.png", "Python.png", "github.png", "PostgreSQL.png", "Cloudinary.png", "Tailwind.png",
-  "HTML.png", "CSS.png", "Next.js.png", "Node.js.png", "React.png", "Redux.png",
-  "MongoDB.png", "Typescrypt.png", "JavaScript.png", "Illustrator.png", "Photoshop.png", "Canva.png", "After-effects.png", "PremierePro.png"
+  "Jest.png", "Python.png", "GitHub.png", "PostgreSQL.png", "Cloudinary.png", "Tailwind.png",
+  "HTML.png", "CSS.png", "NextJS.png", "NodeJS.png", "React.png", "Redux.png",
+  "MongoDB.png", "TypeScript.png", "JavaScript.png", "Illustrator.png", "Photoshop.png",
+  "Canva.png", "After-effects.png", "PremierePro.png"
 ];
+
 
 // Crear una carta (imagen o texto) con el nombre de la skill
 const createCard = (content, skillName) => {
@@ -84,9 +84,9 @@ function renderCards() {
     const skill = skillsUsed[i];
 
     const imgCard = createCard(
-      `<img src="./public/icons/${imagesUsed[i]}" alt="${skill}" />`,
+      `<img src="./public/icons/${imagesUsed[i]}" alt="${skill}" data-base="${imagesUsed[i]}" />`,
       skill
-    );
+    );    
 
     const textCard = createCard(
       `<div class="hidden">${skill}</div>${skill}`,
@@ -97,6 +97,7 @@ function renderCards() {
   }
 
   shuffle(allCards).forEach(card => memoryGame.appendChild(card));
+  actualizarIconosJuegoMemoria();
 }
 
 // Mezclar array
