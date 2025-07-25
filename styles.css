@@ -63,19 +63,16 @@ body.dark-mode #home .presentation p {
 body.dark-mode #home a {
   text-decoration: none;
   color: #ffd60a;
-  padding: 3%;
+  padding: 2%;
+  padding-left: 5%;
+  padding-right: 5%;
   margin-bottom: 0%;
-  font-style: italic;
-  backdrop-filter: blur(2px);
+  font-style: normal;
+  backdrop-filter: blur(7px);
   text-align: center;
   display: block;
   margin: auto;
   margin-top: 1rem;
-  background-image: linear-gradient(
-    0deg,
-    rgba(243, 163, 35, 0.331),
-    rgba(72, 7, 141, 0.637)
-  );
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -349,19 +346,16 @@ body.dark-mode #contact .contact-container a:hover {
 #home a {
   text-decoration: none;
   color: rgb(72, 7, 141);
-  padding: 3%;
+  padding: 2%;
+  padding-left: 5%;
+  padding-right: 5%;
   margin-bottom: 0%;
-  font-style: italic;
+  font-style: normal;
   backdrop-filter: blur(2px);
   text-align: center;
   display: block;
   margin: auto;
   margin-top: 1rem;
-  background-image: linear-gradient(
-    0deg,
-    rgba(72, 7, 141, 0.248),
-    rgba(243, 163, 35, 0.849)
-  );
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 #home .carousel3d-container {
